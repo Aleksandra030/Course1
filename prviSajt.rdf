@@ -1,0 +1,190 @@
+@prefix schema: <http://schema.org/> .
+@prefix courses: <http://localhost:8080/MyFirstREST/webresources/service/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+<http://thewebsemantic.com/javaclass>
+        a       <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+schema:CreativeWork  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://thewebsemantic.com/javaclass>
+                "domen.CreativeWork" .
+
+courses:2d491770-509d-4b70-9b29-7a21cd2e25b8
+        a                       schema:CreativeWork ;
+        schema:authors          courses:a3b3befd-e94f-4a03-8f92-4edbfb2a43de ;
+        schema:description      "Learn about the most effective machine learning techniques, and gain practice implementing them and getting them to work for yourself."^^xsd:string ;
+        schema:hasPart          [ a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1>
+                                          courses:7e9d1dcc-6a03-4226-af62-4a7b4d51c8b8 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2>
+                                          courses:8fffe14d-5e8b-4712-b311-602649cc81f9 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_3>
+                                          courses:ed35c16c-b8aa-4c22-8bcc-241e662e9176 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_4>
+                                          courses:f6ff5cd4-20c8-490a-a116-a08e0ead0b79 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_5>
+                                          courses:9d718b67-daea-412b-9e74-c775c9781001 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_6>
+                                          courses:82e73c40-717a-4d2a-99a1-04227d05674f ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_7>
+                                          courses:bb67ca14-2f3f-4c1b-b278-be50b75a7361
+                                ] ;
+        schema:inLanguage       "en"^^xsd:string ;
+        schema:name             "Machine Learning"^^xsd:string ;
+        schema:publishers       courses:408ad15d-8a07-4b79-9f69-e935c3560951 ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+schema:Person  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://thewebsemantic.com/javaclass>
+                "domen.Person" .
+
+courses:a3b3befd-e94f-4a03-8f92-4edbfb2a43de
+        a            schema:Person ;
+        schema:name  "Andrew Ng"^^xsd:string .
+
+schema:Organization  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://thewebsemantic.com/javaclass>
+                "domen.Organization" .
+
+courses:408ad15d-8a07-4b79-9f69-e935c3560951
+        a            schema:Organization ;
+        schema:name  "Stanford University"^^xsd:string .
+
+courses:7e9d1dcc-6a03-4226-af62-4a7b4d51c8b8
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2012-04-22T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:4411c0ee-05f6-472d-8c95-55e1d274026d ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:2d491770-509d-4b70-9b29-7a21cd2e25b8 .
+
+schema:Duration  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://thewebsemantic.com/javaclass>
+                "domen.Duration" .
+
+courses:4411c0ee-05f6-472d-8c95-55e1d274026d
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:8fffe14d-5e8b-4712-b311-602649cc81f9
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2012-08-19T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:0b6872d8-8c34-4f36-977a-d46a00984134 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:2d491770-509d-4b70-9b29-7a21cd2e25b8 .
+
+courses:0b6872d8-8c34-4f36-977a-d46a00984134
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:ed35c16c-b8aa-4c22-8bcc-241e662e9176
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2013-04-21T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:5595b729-674b-4341-b63b-76030a027dc6 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:2d491770-509d-4b70-9b29-7a21cd2e25b8 .
+
+courses:5595b729-674b-4341-b63b-76030a027dc6
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:f6ff5cd4-20c8-490a-a116-a08e0ead0b79
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2013-10-13T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:a2d7d0e3-41a7-43a0-bcc1-5175662196f3 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:2d491770-509d-4b70-9b29-7a21cd2e25b8 .
+
+courses:a2d7d0e3-41a7-43a0-bcc1-5175662196f3
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:9d718b67-daea-412b-9e74-c775c9781001
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2014-03-02T23:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:262a8562-e1a6-4cac-ace6-65e39b2d62e2 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:2d491770-509d-4b70-9b29-7a21cd2e25b8 .
+
+courses:262a8562-e1a6-4cac-ace6-65e39b2d62e2
+        a                   schema:Duration ;
+        schema:description  "12 weeks"^^xsd:string .
+
+courses:82e73c40-717a-4d2a-99a1-04227d05674f
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2014-06-15T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:9fd0b7e2-c7f6-4579-9353-c6ee1747a66c ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:2d491770-509d-4b70-9b29-7a21cd2e25b8 .
+
+courses:9fd0b7e2-c7f6-4579-9353-c6ee1747a66c
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:bb67ca14-2f3f-4c1b-b278-be50b75a7361
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2014-09-21T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:35e634b5-6f35-40c5-b021-7cfc693b0f35 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:2d491770-509d-4b70-9b29-7a21cd2e25b8 .
+
+courses:35e634b5-6f35-40c5-b021-7cfc693b0f35
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:d55cda69-c4cf-4d31-b17f-9b21f718a2fc
+        a                       schema:CreativeWork ;
+        schema:authors          courses:c57efec4-ab0b-4630-9a9f-41480715add7 ;
+        schema:description      "In this class, you will learn the basics of the PGM representation and how to construct them, using both human knowledge and machine learning techniques."^^xsd:string ;
+        schema:hasPart          [ a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1>
+                                          courses:6a314139-f5f8-460d-a30c-d5a4bcdc43c1 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2>
+                                          courses:b23dfc43-1d76-42a2-a4e7-4f8b402403da ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_3>
+                                          courses:52901790-17bf-4a87-89ba-607f1feb3570
+                                ] ;
+        schema:inLanguage       "en"^^xsd:string ;
+        schema:name             "Probabilistic Graphical Models"^^xsd:string ;
+        schema:publishers       courses:252b477b-e5ed-4681-a2cd-776f57d7d1f6 ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:c57efec4-ab0b-4630-9a9f-41480715add7
+        a            schema:Person ;
+        schema:name  "Daphne Koller"^^xsd:string .
+
+courses:252b477b-e5ed-4681-a2cd-776f57d7d1f6
+        a            schema:Organization ;
+        schema:name  "Stanford University"^^xsd:string .
+
+courses:6a314139-f5f8-460d-a30c-d5a4bcdc43c1
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2012-03-18T23:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:52c86bc2-8d2a-45f4-8e30-0e4e043efb99 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:d55cda69-c4cf-4d31-b17f-9b21f718a2fc .
+
+courses:52c86bc2-8d2a-45f4-8e30-0e4e043efb99
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:b23dfc43-1d76-42a2-a4e7-4f8b402403da
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2012-09-23T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:094f7d55-9cdb-4540-a3e3-9c184a666dd3 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:d55cda69-c4cf-4d31-b17f-9b21f718a2fc .
+
+courses:094f7d55-9cdb-4540-a3e3-9c184a666dd3
+        a                   schema:Duration ;
+        schema:description  "11 weeks"^^xsd:string .
+
+courses:52901790-17bf-4a87-89ba-607f1feb3570
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2013-04-07T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:ca10cd09-2de6-497e-a366-401c6419c5d8 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:d55cda69-c4cf-4d31-b17f-9b21f718a2fc .
+
+courses:ca10cd09-2de6-497e-a366-401c6419c5d8
+        a                   schema:Duration ;
+        schema:description  "11 weeks"^^xsd:string .

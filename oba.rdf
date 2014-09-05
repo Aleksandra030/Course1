@@ -1,0 +1,1195 @@
+@prefix schema: <http://schema.org/> .
+@prefix courses: <http://localhost:8080/MyFirstREST/webresources/service/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+<http://thewebsemantic.com/javaclass>
+        a       <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+
+schema:CreativeWork  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://thewebsemantic.com/javaclass>
+                "domen.CreativeWork" .
+
+courses:df5afd95-86ae-49a7-9aed-1c831cfe6e28
+        a                       schema:CreativeWork ;
+        schema:authors          courses:3612bbfb-9703-4c7e-85b7-559c1760ead5 ;
+        schema:description      "Learn about the most effective machine learning techniques, and gain practice implementing them and getting them to work for yourself."^^xsd:string ;
+        schema:hasPart          [ a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1>
+                                          courses:40cc4c6b-d971-4010-8673-7fb0bc86b56a ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2>
+                                          courses:7581f640-245d-47b0-8cf1-86cbee602400 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_3>
+                                          courses:a832922e-d6f8-497d-a29a-85b7a856ca6b ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_4>
+                                          courses:3c3b34c6-7d28-4951-b8d1-1e1bbff18a24 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_5>
+                                          courses:f79c1d1c-2c07-4e1e-9335-316e925af0a0 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_6>
+                                          courses:d81793f3-bd84-47be-b873-96dbce9a66a6 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_7>
+                                          courses:f9bcbdb8-5ea0-4542-81d7-2110904794c9
+                                ] ;
+        schema:inLanguage       "en"^^xsd:string ;
+        schema:name             "Machine Learning"^^xsd:string ;
+        schema:publishers       courses:3a224bae-985b-4524-ad66-934ffff64179 ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+schema:Person  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://thewebsemantic.com/javaclass>
+                "domen.Person" .
+
+courses:3612bbfb-9703-4c7e-85b7-559c1760ead5
+        a            schema:Person ;
+        schema:name  "Andrew Ng"^^xsd:string .
+
+schema:Organization  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://thewebsemantic.com/javaclass>
+                "domen.Organization" .
+
+courses:3a224bae-985b-4524-ad66-934ffff64179
+        a            schema:Organization ;
+        schema:name  "Stanford University"^^xsd:string .
+
+courses:40cc4c6b-d971-4010-8673-7fb0bc86b56a
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2012-04-22T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:ae06974d-db28-47b8-8b43-9c538870ddb7 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:df5afd95-86ae-49a7-9aed-1c831cfe6e28 .
+
+schema:Duration  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://thewebsemantic.com/javaclass>
+                "domen.Duration" .
+
+courses:ae06974d-db28-47b8-8b43-9c538870ddb7
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:7581f640-245d-47b0-8cf1-86cbee602400
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2012-08-19T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:f2156bcb-7e34-4688-8bf9-9079ef9a3332 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:df5afd95-86ae-49a7-9aed-1c831cfe6e28 .
+
+courses:f2156bcb-7e34-4688-8bf9-9079ef9a3332
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:a832922e-d6f8-497d-a29a-85b7a856ca6b
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2013-04-21T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:7ffa308a-a17f-4fdb-812f-bbcebec8fa25 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:df5afd95-86ae-49a7-9aed-1c831cfe6e28 .
+
+courses:7ffa308a-a17f-4fdb-812f-bbcebec8fa25
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:3c3b34c6-7d28-4951-b8d1-1e1bbff18a24
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2013-10-13T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:9fdbb164-d30f-4e7f-86f3-7bc98096ac0e ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:df5afd95-86ae-49a7-9aed-1c831cfe6e28 .
+
+courses:9fdbb164-d30f-4e7f-86f3-7bc98096ac0e
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:f79c1d1c-2c07-4e1e-9335-316e925af0a0
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2014-03-02T23:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:e0f6612f-5a5f-4bbd-af36-6dcebdf0749b ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:df5afd95-86ae-49a7-9aed-1c831cfe6e28 .
+
+courses:e0f6612f-5a5f-4bbd-af36-6dcebdf0749b
+        a                   schema:Duration ;
+        schema:description  "12 weeks"^^xsd:string .
+
+courses:d81793f3-bd84-47be-b873-96dbce9a66a6
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2014-06-15T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:abd22917-e512-4060-9f1c-e30907c0394c ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:df5afd95-86ae-49a7-9aed-1c831cfe6e28 .
+
+courses:abd22917-e512-4060-9f1c-e30907c0394c
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:f9bcbdb8-5ea0-4542-81d7-2110904794c9
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2014-09-21T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:f998db1e-ce43-428f-8b3d-392aeffd544f ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:df5afd95-86ae-49a7-9aed-1c831cfe6e28 .
+
+courses:f998db1e-ce43-428f-8b3d-392aeffd544f
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:c53f71b8-2c8b-47b5-851e-5c772333c7c2
+        a                       schema:CreativeWork ;
+        schema:authors          courses:5836680d-9a72-4b23-836c-4f11f51e4f76 ;
+        schema:description      "In this class, you will learn the basics of the PGM representation and how to construct them, using both human knowledge and machine learning techniques."^^xsd:string ;
+        schema:hasPart          [ a       <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1>
+                                          courses:f907ac86-931b-403b-938d-520ad460bf50 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_2>
+                                          courses:ce397e68-98a4-40c3-9d12-6b597d514f92 ;
+                                  <http://www.w3.org/1999/02/22-rdf-syntax-ns#_3>
+                                          courses:f2c154a0-e4c9-48d7-b7bf-6c35dc4e39a4
+                                ] ;
+        schema:inLanguage       "en"^^xsd:string ;
+        schema:name             "Probabilistic Graphical Models"^^xsd:string ;
+        schema:publishers       courses:059f0728-2034-414e-a69a-fc712b57b7f9 ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:5836680d-9a72-4b23-836c-4f11f51e4f76
+        a            schema:Person ;
+        schema:name  "Daphne Koller"^^xsd:string .
+
+courses:059f0728-2034-414e-a69a-fc712b57b7f9
+        a            schema:Organization ;
+        schema:name  "Stanford University"^^xsd:string .
+
+courses:f907ac86-931b-403b-938d-520ad460bf50
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2012-03-18T23:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:4d7dc41d-7ac9-4212-8dbe-25d52302e31d ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:c53f71b8-2c8b-47b5-851e-5c772333c7c2 .
+
+courses:4d7dc41d-7ac9-4212-8dbe-25d52302e31d
+        a                   schema:Duration ;
+        schema:description  "10 weeks"^^xsd:string .
+
+courses:ce397e68-98a4-40c3-9d12-6b597d514f92
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2012-09-23T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:7bc3b6c6-455f-45c7-8d0d-04f994732a5a ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:c53f71b8-2c8b-47b5-851e-5c772333c7c2 .
+
+courses:7bc3b6c6-455f-45c7-8d0d-04f994732a5a
+        a                   schema:Duration ;
+        schema:description  "11 weeks"^^xsd:string .
+
+courses:f2c154a0-e4c9-48d7-b7bf-6c35dc4e39a4
+        a                   schema:CreativeWork ;
+        schema:dateCreated  "2013-04-07T22:00:00Z"^^xsd:dateTime ;
+        schema:duration     courses:231826f5-aec7-4fa3-8be0-096d16b0cbc3 ;
+        schema:hasPart      [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:isPartOf     courses:c53f71b8-2c8b-47b5-851e-5c772333c7c2 .
+
+courses:231826f5-aec7-4fa3-8be0-096d16b0cbc3
+        a                   schema:Duration ;
+        schema:description  "11 weeks"^^xsd:string .
+
+courses:d417bfaa-8a44-4e39-8405-3faac14eb98a
+        a                       schema:CreativeWork ;
+        schema:authors          courses:9c4cdddc-a262-4257-9ae9-bbe60943832b ;
+        schema:description      "Build a Search Engine & a Social Network"^^xsd:string ;
+        schema:duration         courses:a239cf1b-e954-49b2-a574-2010eebd912e ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Computer Science"^^xsd:string ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:9c4cdddc-a262-4257-9ae9-bbe60943832b
+        a            schema:Person ;
+        schema:name  "Dave Evans"^^xsd:string .
+
+courses:a239cf1b-e954-49b2-a574-2010eebd912e
+        a                   schema:Duration ;
+        schema:description  "3 months"^^xsd:string .
+
+courses:d7adbd61-9df5-4fbc-9649-470f1613cbf5
+        a                       schema:CreativeWork ;
+        schema:authors          courses:a70a20d0-d379-4278-bf52-ca52d3e2604d ;
+        schema:description      "Building Programs with Classes & Objects"^^xsd:string ;
+        schema:duration         courses:34ecea6b-3604-4c3f-b950-8f7401c6953c ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Java Programming"^^xsd:string ;
+        schema:publishers       courses:ecd217db-6e4a-47b0-8ef3-420fc7be2f08 ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:a70a20d0-d379-4278-bf52-ca52d3e2604d
+        a            schema:Person ;
+        schema:name  "Cay Horstmann"^^xsd:string .
+
+courses:ecd217db-6e4a-47b0-8ef3-420fc7be2f08
+        a            schema:Organization ;
+        schema:name  "San Jose State University"^^xsd:string .
+
+courses:34ecea6b-3604-4c3f-b950-8f7401c6953c
+        a                   schema:Duration ;
+        schema:description  "4 months"^^xsd:string .
+
+courses:7709b8bd-f0ed-447c-b11e-b1d3fb02cc27
+        a                       schema:CreativeWork ;
+        schema:authors          courses:1d60e90d-2f5a-4285-8597-9989e7f4744d ;
+        schema:description      "Learn Object-Oriented Programming"^^xsd:string ;
+        schema:duration         courses:8f65255d-511a-42a6-8915-6b5d28a5ded5 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Programming Foundations with Python"^^xsd:string ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:1d60e90d-2f5a-4285-8597-9989e7f4744d
+        a            schema:Person ;
+        schema:name  "Kunal Chawla"^^xsd:string .
+
+courses:8f65255d-511a-42a6-8915-6b5d28a5ded5
+        a                   schema:Duration ;
+        schema:description  "1 months"^^xsd:string .
+
+courses:d8bb4e98-2004-4b26-ac32-fc4ec7529390
+        a                       schema:CreativeWork ;
+        schema:authors          courses:4e4ab6a9-8e18-43f7-9eb2-cc23cb501cc5 , courses:e1fc616c-bb0f-4472-9d0f-40b8124fa0d5 , courses:91a86700-33c7-4c6e-95d5-187a45e55e52 , courses:2abe6495-e289-4c2f-b57a-933bd9a7e873 ;
+        schema:description      "Android Fundamentals"^^xsd:string ;
+        schema:duration         courses:8fb0c0fe-3206-40bc-8731-dd50c2d8a63a ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Developing Android Apps"^^xsd:string ;
+        schema:publishers       courses:7c745116-4636-4f02-be65-c5c7b366397b ;
+        schema:typicalAgeRange  "advanced"^^xsd:string .
+
+courses:4e4ab6a9-8e18-43f7-9eb2-cc23cb501cc5
+        a            schema:Person ;
+        schema:name  "Reto Meier"^^xsd:string .
+
+courses:e1fc616c-bb0f-4472-9d0f-40b8124fa0d5
+        a            schema:Person ;
+        schema:name  "Katherine Kuan"^^xsd:string .
+
+courses:91a86700-33c7-4c6e-95d5-187a45e55e52
+        a            schema:Person ;
+        schema:name  "Dan Galpin"^^xsd:string .
+
+courses:2abe6495-e289-4c2f-b57a-933bd9a7e873
+        a            schema:Person ;
+        schema:name  "Alexander Lucas"^^xsd:string .
+
+courses:7c745116-4636-4f02-be65-c5c7b366397b
+        a            schema:Organization ;
+        schema:name  "Google"^^xsd:string .
+
+courses:8fb0c0fe-3206-40bc-8731-dd50c2d8a63a
+        a                   schema:Duration ;
+        schema:description  "8 weeks"^^xsd:string .
+
+courses:c1cf31f8-d8e5-4496-bb47-95f409045b38
+        a                       schema:CreativeWork ;
+        schema:authors          courses:1d7a7d4d-d858-4cf6-bfc1-5e06add6b915 ;
+        schema:description      "Learn What It Takes to Become a Data Scientist"^^xsd:string ;
+        schema:duration         courses:a90703f3-c9b3-4de5-8413-d0467a45b8ac ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Data Science"^^xsd:string ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:1d7a7d4d-d858-4cf6-bfc1-5e06add6b915
+        a            schema:Person ;
+        schema:name  "Dave Holtz"^^xsd:string .
+
+courses:a90703f3-c9b3-4de5-8413-d0467a45b8ac
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:02c7b8c3-43b3-445b-907f-3624176f39ed
+        a                       schema:CreativeWork ;
+        schema:authors          courses:5c8322d6-b293-433c-b2ea-d0e55c88c397 ;
+        schema:description      "How to Build a Blog"^^xsd:string ;
+        schema:duration         courses:9a906c6f-a68f-4c73-8f62-8c4d16d68b82 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Web Development"^^xsd:string ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:5c8322d6-b293-433c-b2ea-d0e55c88c397
+        a            schema:Person ;
+        schema:name  "Steve Huffman"^^xsd:string .
+
+courses:9a906c6f-a68f-4c73-8f62-8c4d16d68b82
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:bc29b94d-8ba1-4963-ac54-84c5e1f83955
+        a                       schema:CreativeWork ;
+        schema:authors          courses:eddc6b66-9e8e-4dcc-b568-c44d74c0a959 , courses:4b4c485b-f937-4ca5-a37c-8d0eb5a45d65 ;
+        schema:description      "How to Process Big Data"^^xsd:string ;
+        schema:duration         courses:bac1bfdd-74a2-48b0-a957-fc07bba2a7b6 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Hadoop and MapReduce"^^xsd:string ;
+        schema:publishers       courses:27a3b77c-585f-42ae-8e47-7de2f368a5f8 ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:eddc6b66-9e8e-4dcc-b568-c44d74c0a959
+        a            schema:Person ;
+        schema:name  "Sarah Sproehnle"^^xsd:string .
+
+courses:4b4c485b-f937-4ca5-a37c-8d0eb5a45d65
+        a            schema:Person ;
+        schema:name  "Ian Wrigley"^^xsd:string .
+
+courses:27a3b77c-585f-42ae-8e47-7de2f368a5f8
+        a            schema:Organization ;
+        schema:name  "Cloudera"^^xsd:string .
+
+courses:bac1bfdd-74a2-48b0-a957-fc07bba2a7b6
+        a                   schema:Duration ;
+        schema:description  "1 months"^^xsd:string .
+
+courses:7992f9f5-c9d1-4bbc-a8e0-c896378a4df1
+        a                       schema:CreativeWork ;
+        schema:authors          courses:dd36f684-f53a-4767-a47c-8f80e412dcdf , courses:a430a811-7351-48dd-bd76-c3f92e89dc94 , courses:fa71949c-faf6-41fc-b7ee-8246dcdf7092 ;
+        schema:description      "Think It. Build It."^^xsd:string ;
+        schema:duration         courses:f455f727-e702-49b8-bcc0-7df20932352c ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Point & Click App Development"^^xsd:string ;
+        schema:publishers       courses:635ef2bb-6222-4c3f-bb05-c0aac66affc4 ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:dd36f684-f53a-4767-a47c-8f80e412dcdf
+        a            schema:Person ;
+        schema:name  "Samantha Ready"^^xsd:string .
+
+courses:a430a811-7351-48dd-bd76-c3f92e89dc94
+        a            schema:Person ;
+        schema:name  "Mario Korf"^^xsd:string .
+
+courses:fa71949c-faf6-41fc-b7ee-8246dcdf7092
+        a            schema:Person ;
+        schema:name  "Andy Brown"^^xsd:string .
+
+courses:635ef2bb-6222-4c3f-bb05-c0aac66affc4
+        a            schema:Organization ;
+        schema:name  "Salesforce"^^xsd:string .
+
+courses:f455f727-e702-49b8-bcc0-7df20932352c
+        a                   schema:Duration ;
+        schema:description  "1 months"^^xsd:string .
+
+courses:57db829d-3e4a-498f-9e17-40ce74d23279
+        a                       schema:CreativeWork ;
+        schema:authors          courses:222a5aac-d448-4686-a65f-4d91570b0dd1 , courses:85db46b8-f9e4-4d73-8101-5fe4a7b5ca0f ;
+        schema:description      "Learn to Design a 5-Star Android App"^^xsd:string ;
+        schema:duration         courses:807432ad-9114-48a7-9aa6-64be7fed3706 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "UX Design for Mobile Developers"^^xsd:string ;
+        schema:publishers       courses:8f077fc1-1808-47e3-b077-df87dbcd4cac ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:222a5aac-d448-4686-a65f-4d91570b0dd1
+        a            schema:Person ;
+        schema:name  "Nazmul Idris"^^xsd:string .
+
+courses:85db46b8-f9e4-4d73-8101-5fe4a7b5ca0f
+        a            schema:Person ;
+        schema:name  "Izabel Grey"^^xsd:string .
+
+courses:8f077fc1-1808-47e3-b077-df87dbcd4cac
+        a            schema:Organization ;
+        schema:name  "Google"^^xsd:string .
+
+courses:807432ad-9114-48a7-9aa6-64be7fed3706
+        a                   schema:Duration ;
+        schema:description  "4 weeks"^^xsd:string .
+
+courses:767f800c-c89f-43cf-a432-70552aa3dd33
+        a                       schema:CreativeWork ;
+        schema:authors          courses:9b7224c1-1020-4e77-a046-093cf0a50987 , courses:45b37723-663a-41e5-8ed7-96d9a834ab6d , courses:beb2695d-ffc5-4c6c-803a-ad5a33ffc35d , courses:c7d16098-643b-4d8b-b511-7d48e263cd29 ;
+        schema:description      "Investigate, Visualize, and Summarize Data"^^xsd:string ;
+        schema:duration         courses:880d156f-1937-4528-b760-8131ab938770 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Data Analysis with R"^^xsd:string ;
+        schema:publishers       courses:100d9ef9-9d0f-4c58-8442-15aff3dde890 ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:9b7224c1-1020-4e77-a046-093cf0a50987
+        a            schema:Person ;
+        schema:name  "Dean Eckles"^^xsd:string .
+
+courses:45b37723-663a-41e5-8ed7-96d9a834ab6d
+        a            schema:Person ;
+        schema:name  "Moira Burke"^^xsd:string .
+
+courses:beb2695d-ffc5-4c6c-803a-ad5a33ffc35d
+        a            schema:Person ;
+        schema:name  "Chris Saden"^^xsd:string .
+
+courses:c7d16098-643b-4d8b-b511-7d48e263cd29
+        a            schema:Person ;
+        schema:name  "Solomon Messing"^^xsd:string .
+
+courses:100d9ef9-9d0f-4c58-8442-15aff3dde890
+        a            schema:Organization ;
+        schema:name  "Facebook"^^xsd:string .
+
+courses:880d156f-1937-4528-b760-8131ab938770
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:649164ec-247d-45bf-b4b7-9ed5572d4291
+        a                       schema:CreativeWork ;
+        schema:authors          courses:15754e34-49f0-4826-adb4-33ad2c9a2a5b , courses:c47f6a1e-72d9-4a68-b34a-f88b481c29b1 ;
+        schema:description      "with Google App Engine"^^xsd:string ;
+        schema:duration         courses:62546c23-d6ac-4df7-9ab9-e63780ba32bf ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Developing Scalable Apps with Java"^^xsd:string ;
+        schema:publishers       courses:f9fefe03-1f0c-4d01-93e1-16bd99903c71 ;
+        schema:typicalAgeRange  "advanced"^^xsd:string .
+
+courses:15754e34-49f0-4826-adb4-33ad2c9a2a5b
+        a            schema:Person ;
+        schema:name  "Magnus Hyttsten"^^xsd:string .
+
+courses:c47f6a1e-72d9-4a68-b34a-f88b481c29b1
+        a            schema:Person ;
+        schema:name  "Jocelyn Becker"^^xsd:string .
+
+courses:f9fefe03-1f0c-4d01-93e1-16bd99903c71
+        a            schema:Organization ;
+        schema:name  "Google"^^xsd:string .
+
+courses:62546c23-d6ac-4df7-9ab9-e63780ba32bf
+        a                   schema:Duration ;
+        schema:description  "6 weeks"^^xsd:string .
+
+courses:79ed9646-a56c-4c92-89f5-ecc61f22bb3e
+        a                       schema:CreativeWork ;
+        schema:authors          courses:d6fa10d8-b2c0-43c1-94ba-96baa186980e , courses:a39d84f6-bb32-4ec9-a5eb-82880f8427e6 ;
+        schema:description      "Mathematics for Understanding Data"^^xsd:string ;
+        schema:duration         courses:db63f467-2de8-4be8-bd30-c74f4949290d ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Descriptive Statistics"^^xsd:string ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:d6fa10d8-b2c0-43c1-94ba-96baa186980e
+        a            schema:Person ;
+        schema:name  "Sean Laraway"^^xsd:string .
+
+courses:a39d84f6-bb32-4ec9-a5eb-82880f8427e6
+        a            schema:Person ;
+        schema:name  "Ronald Rogers"^^xsd:string .
+
+courses:db63f467-2de8-4be8-bd30-c74f4949290d
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:22e23477-f7e4-473c-b434-d6508244dc5e
+        a                       schema:CreativeWork ;
+        schema:authors          courses:0626b5e4-b9e3-4531-9c45-6c3b3e1d9e40 , courses:e1706ca7-a590-45ea-a85f-05368200ed52 ;
+        schema:description      "Making Predictions from Data"^^xsd:string ;
+        schema:duration         courses:013763e4-1935-4cea-ae41-96887b4efa04 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Inferential Statistics"^^xsd:string ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:0626b5e4-b9e3-4531-9c45-6c3b3e1d9e40
+        a            schema:Person ;
+        schema:name  "Sean Laraway"^^xsd:string .
+
+courses:e1706ca7-a590-45ea-a85f-05368200ed52
+        a            schema:Person ;
+        schema:name  "Ronald Rogers"^^xsd:string .
+
+courses:013763e4-1935-4cea-ae41-96887b4efa04
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:5a77ab5d-d41b-4a99-a1cd-e7d004e5089c
+        a                       schema:CreativeWork ;
+        schema:authors          courses:ae978fa7-cc7e-4398-b5de-f922812fb6eb , courses:24782b1d-1f97-45c5-8f82-3f1e7758869c ;
+        schema:description      "Conversations on Analyzing Data"^^xsd:string ;
+        schema:duration         courses:808c345f-9229-4eaa-aafa-0a65908a20d5 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Machine Learning: Supervised Learning"^^xsd:string ;
+        schema:publishers       courses:a409fd4a-66c4-425b-b2f4-f5cffb6162e3 ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:ae978fa7-cc7e-4398-b5de-f922812fb6eb
+        a            schema:Person ;
+        schema:name  "Charles Isbell"^^xsd:string .
+
+courses:24782b1d-1f97-45c5-8f82-3f1e7758869c
+        a            schema:Person ;
+        schema:name  "Michael Littman"^^xsd:string .
+
+courses:a409fd4a-66c4-425b-b2f4-f5cffb6162e3
+        a            schema:Organization ;
+        schema:name  "Georgia Institute of Technology"^^xsd:string .
+
+courses:808c345f-9229-4eaa-aafa-0a65908a20d5
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:c62d0d22-0bfb-4c0c-9e4a-9e40704aa712
+        a                       schema:CreativeWork ;
+        schema:authors          courses:3399ff95-6581-4c24-a5ae-0f9562e56fbe , courses:76694211-86c5-4d68-8b3c-ba9d93780a71 ;
+        schema:description      "Conversations on Analyzing Data"^^xsd:string ;
+        schema:duration         courses:87facdbb-e971-4239-bfd6-0d2d3f5dcaee ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Machine Learning: Reinforcement Learning"^^xsd:string ;
+        schema:publishers       courses:398301a8-abd2-4ed8-9798-cc73e2b74b2a ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:3399ff95-6581-4c24-a5ae-0f9562e56fbe
+        a            schema:Person ;
+        schema:name  "Charles Isbell"^^xsd:string .
+
+courses:76694211-86c5-4d68-8b3c-ba9d93780a71
+        a            schema:Person ;
+        schema:name  "Michael Littman"^^xsd:string .
+
+courses:398301a8-abd2-4ed8-9798-cc73e2b74b2a
+        a            schema:Organization ;
+        schema:name  "Georgia Institute of Technology"^^xsd:string .
+
+courses:87facdbb-e971-4239-bfd6-0d2d3f5dcaee
+        a                   schema:Duration ;
+        schema:description  "1 months"^^xsd:string .
+
+courses:9e98175d-aa9e-47c6-84af-322b6604d521
+        a                       schema:CreativeWork ;
+        schema:authors          courses:b9cfae82-bdb1-4d37-91d2-d4701fd28368 , courses:86c68270-9b60-45b6-b2eb-a57788cf09fb ;
+        schema:description      "Conversations on Analyzing Data"^^xsd:string ;
+        schema:duration         courses:c0ed8b46-f23e-48b2-953c-c57d2c6d9729 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Machine Learning: Unsupervised Learning"^^xsd:string ;
+        schema:publishers       courses:b30011d1-50a0-408f-b23e-bedf1e9188f1 ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:b9cfae82-bdb1-4d37-91d2-d4701fd28368
+        a            schema:Person ;
+        schema:name  "Charles Isbell"^^xsd:string .
+
+courses:86c68270-9b60-45b6-b2eb-a57788cf09fb
+        a            schema:Person ;
+        schema:name  "Michael Littman"^^xsd:string .
+
+courses:b30011d1-50a0-408f-b23e-bedf1e9188f1
+        a            schema:Organization ;
+        schema:name  "Georgia Institute of Technology"^^xsd:string .
+
+courses:c0ed8b46-f23e-48b2-953c-c57d2c6d9729
+        a                   schema:Duration ;
+        schema:description  "1 months"^^xsd:string .
+
+courses:2d7b5203-bf31-4b80-a82a-0f936bca5eae
+        a                       schema:CreativeWork ;
+        schema:authors          courses:aaca7c3e-388d-4fad-8a3e-8f60dbfdab32 ;
+        schema:description      "Security and Software Defined Networking"^^xsd:string ;
+        schema:duration         courses:76cf9fea-0a6d-4020-8ad8-ef1e68ed4d6c ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Computer Networking"^^xsd:string ;
+        schema:publishers       courses:9e32cf8e-9072-42fd-83d4-260ce0c1b253 ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:aaca7c3e-388d-4fad-8a3e-8f60dbfdab32
+        a            schema:Person ;
+        schema:name  "Nick Feamster"^^xsd:string .
+
+courses:9e32cf8e-9072-42fd-83d4-260ce0c1b253
+        a            schema:Organization ;
+        schema:name  "Georgia Institute of Technology"^^xsd:string .
+
+courses:76cf9fea-0a6d-4020-8ad8-ef1e68ed4d6c
+        a                   schema:Duration ;
+        schema:description  "3 months"^^xsd:string .
+
+courses:8c2f5be7-b18f-4e6f-a9ba-961ad84d9407
+        a                       schema:CreativeWork ;
+        schema:authors          courses:345e0cd3-47ae-4a60-bb50-3133a6cb37ef ;
+        schema:description      "From Idea to Product"^^xsd:string ;
+        schema:duration         courses:50291127-9cd9-435f-98cc-772d7eb0fb0e ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Software Development Life Cycles"^^xsd:string ;
+        schema:publishers       courses:51ecffa6-e10d-4fe7-aad9-6ddaf8594bd2 ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:345e0cd3-47ae-4a60-bb50-3133a6cb37ef
+        a            schema:Person ;
+        schema:name  "Alex Orso"^^xsd:string .
+
+courses:51ecffa6-e10d-4fe7-aad9-6ddaf8594bd2
+        a            schema:Organization ;
+        schema:name  "Georgia Institute of Technology"^^xsd:string .
+
+courses:50291127-9cd9-435f-98cc-772d7eb0fb0e
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:ce105d0e-7db4-42ef-802c-1832c02ed38d
+        a                       schema:CreativeWork ;
+        schema:authors          courses:ea220ff1-debf-4cbd-ba34-5e252bfb5b74 ;
+        schema:description      "Programming a Robotic Car"^^xsd:string ;
+        schema:duration         courses:bbe26efe-19b1-4442-b4bc-5517b7d9b60b ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Artificial Intelligence for Robotics"^^xsd:string ;
+        schema:publishers       courses:c9807e40-997f-46c4-9804-92910f84f724 ;
+        schema:typicalAgeRange  "advanced"^^xsd:string .
+
+courses:ea220ff1-debf-4cbd-ba34-5e252bfb5b74
+        a            schema:Person ;
+        schema:name  "Sebastian Thrun"^^xsd:string .
+
+courses:c9807e40-997f-46c4-9804-92910f84f724
+        a            schema:Organization ;
+        schema:name  "Georgia Institute of Technology"^^xsd:string .
+
+courses:bbe26efe-19b1-4442-b4bc-5517b7d9b60b
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:f0c65dab-5b61-4d85-825e-56149d0db464
+        a                       schema:CreativeWork ;
+        schema:authors          courses:1845869a-691c-4cb0-9c39-8cd1901c0353 ;
+        schema:description      "Data Manipulation and Retrieval"^^xsd:string ;
+        schema:duration         courses:14b8f684-4bca-45a9-a9a4-e674a5f3ac7f ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Data Wrangling with MongoDB"^^xsd:string ;
+        schema:publishers       courses:fa5074b4-a839-4a91-902b-0cc1f2b7b657 ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:1845869a-691c-4cb0-9c39-8cd1901c0353
+        a            schema:Person ;
+        schema:name  "Shannon Bradshaw"^^xsd:string .
+
+courses:fa5074b4-a839-4a91-902b-0cc1f2b7b657
+        a            schema:Organization ;
+        schema:name  "MongoDB"^^xsd:string .
+
+courses:14b8f684-4bca-45a9-a9a4-e674a5f3ac7f
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:2c1eb5f3-db34-43ca-a91b-172d819f1d78
+        a                       schema:CreativeWork ;
+        schema:authors          courses:47024ed9-5d5a-4f9b-84fe-268941aefc76 , courses:bb9f6769-97bb-4e32-bbbb-a1195f37b711 ;
+        schema:description      "Using CUDA to Harness the Power of GPUs"^^xsd:string ;
+        schema:duration         courses:83bf78f0-5de9-40c2-b408-8337642ee640 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Parallel Programming"^^xsd:string ;
+        schema:publishers       courses:928a37b3-f8ec-47d3-b0cb-fc0670da9d6d ;
+        schema:typicalAgeRange  "advanced"^^xsd:string .
+
+courses:47024ed9-5d5a-4f9b-84fe-268941aefc76
+        a            schema:Person ;
+        schema:name  "David Luebke"^^xsd:string .
+
+courses:bb9f6769-97bb-4e32-bbbb-a1195f37b711
+        a            schema:Person ;
+        schema:name  "John Owens"^^xsd:string .
+
+courses:928a37b3-f8ec-47d3-b0cb-fc0670da9d6d
+        a            schema:Organization ;
+        schema:name  "Nvidia"^^xsd:string .
+
+courses:83bf78f0-5de9-40c2-b408-8337642ee640
+        a                   schema:Duration ;
+        schema:description  "3 months"^^xsd:string .
+
+courses:c87e4f83-7c7f-43c2-9e45-d6127c64c7dc
+        a                       schema:CreativeWork ;
+        schema:authors          courses:8a819e67-5b24-4b1f-bceb-8d066810ccf4 , courses:cbb8b793-41b3-466b-8e40-ca0414ec1f10 ;
+        schema:description      "Principles of Design"^^xsd:string ;
+        schema:duration         courses:1ae18caf-c453-4dbc-8a20-a14f5cf2d219 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to the Design of Everyday Things"^^xsd:string ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:8a819e67-5b24-4b1f-bceb-8d066810ccf4
+        a            schema:Person ;
+        schema:name  "Don Norman"^^xsd:string .
+
+courses:cbb8b793-41b3-466b-8e40-ca0414ec1f10
+        a            schema:Person ;
+        schema:name  "Kristian Simsarian"^^xsd:string .
+
+courses:1ae18caf-c453-4dbc-8a20-a14f5cf2d219
+        a                   schema:Duration ;
+        schema:description  "2 weeks"^^xsd:string .
+
+courses:d37d01fc-65c0-4389-9cbf-feda5ee48c91
+        a                       schema:CreativeWork ;
+        schema:authors          courses:cffe5442-fd68-427d-8fa1-c00e21eaedfb , courses:61749066-c1dd-409f-9b6f-fcf1d1384346 ;
+        schema:description      "Building Mobile Web Experiences"^^xsd:string ;
+        schema:duration         courses:fd2d9499-5c1f-43a2-a663-46bf00ac4e21 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Mobile Web Development"^^xsd:string ;
+        schema:publishers       courses:72fa07ac-8911-48ca-ac1b-1ea300fdc8e7 ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:cffe5442-fd68-427d-8fa1-c00e21eaedfb
+        a            schema:Person ;
+        schema:name  "Chris Wilson"^^xsd:string .
+
+courses:61749066-c1dd-409f-9b6f-fcf1d1384346
+        a            schema:Person ;
+        schema:name  "Peter Lubbers"^^xsd:string .
+
+courses:72fa07ac-8911-48ca-ac1b-1ea300fdc8e7
+        a            schema:Organization ;
+        schema:name  "Google"^^xsd:string .
+
+courses:fd2d9499-5c1f-43a2-a663-46bf00ac4e21
+        a                   schema:Duration ;
+        schema:description  "1 months"^^xsd:string .
+
+courses:1dba7a41-3608-4194-ab19-98a5c0a0d91c
+        a                       schema:CreativeWork ;
+        schema:authors          courses:12ace568-ae7c-4ad7-8fdb-3c96deccb2d7 , courses:f9b675f4-064f-4b01-8420-e05866b77fc2 ;
+        schema:description      "The Critical Rendering Path"^^xsd:string ;
+        schema:duration         courses:b74a8296-294b-4c9b-8ddd-02173a025879 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Website Performance Optimization"^^xsd:string ;
+        schema:publishers       courses:02e4839e-c083-4ce4-86c0-627718a1813c ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:12ace568-ae7c-4ad7-8fdb-3c96deccb2d7
+        a            schema:Person ;
+        schema:name  "Ilya Grigorik"^^xsd:string .
+
+courses:f9b675f4-064f-4b01-8420-e05866b77fc2
+        a            schema:Person ;
+        schema:name  "Cameron Pittman"^^xsd:string .
+
+courses:02e4839e-c083-4ce4-86c0-627718a1813c
+        a            schema:Organization ;
+        schema:name  "Google"^^xsd:string .
+
+courses:b74a8296-294b-4c9b-8ddd-02173a025879
+        a                   schema:Duration ;
+        schema:description  "1 weeks"^^xsd:string .
+
+courses:c59ea348-eaf3-4c11-8ef8-222422e6c71f
+        a                       schema:CreativeWork ;
+        schema:authors          courses:b762c82e-d077-4729-8287-f91534fda8c8 , courses:8e1356bc-919b-4c62-9b23-b6d36ae93b8d ;
+        schema:description      "Your Tiles. Your Styles."^^xsd:string ;
+        schema:duration         courses:b2d4673f-e4f1-4880-8299-e3f6d1a6dda2 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Make Your Own 2048"^^xsd:string ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:b762c82e-d077-4729-8287-f91534fda8c8
+        a            schema:Person ;
+        schema:name  "Andy Brown"^^xsd:string .
+
+courses:8e1356bc-919b-4c62-9b23-b6d36ae93b8d
+        a            schema:Person ;
+        schema:name  "Sarah Spikes"^^xsd:string .
+
+courses:b2d4673f-e4f1-4880-8299-e3f6d1a6dda2
+        a                   schema:Duration ;
+        schema:description  "1 days"^^xsd:string .
+
+courses:457e5712-2597-4744-8ca6-af801acab8c4
+        a                       schema:CreativeWork ;
+        schema:authors          courses:a0e281af-dd59-4fd9-9af4-538fd56d2921 ;
+        schema:description      "The Lean LaunchPad"^^xsd:string ;
+        schema:duration         courses:cdd8043a-35a3-42ec-bda3-c46bd1e73be4 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "How to Build a Startup"^^xsd:string ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:a0e281af-dd59-4fd9-9af4-538fd56d2921
+        a            schema:Person ;
+        schema:name  "Steve Blank"^^xsd:string .
+
+courses:cdd8043a-35a3-42ec-bda3-c46bd1e73be4
+        a                   schema:Duration ;
+        schema:description  "1 months"^^xsd:string .
+
+courses:80ebda99-8058-47b8-bf12-bcb35c6ba037
+        a                       schema:CreativeWork ;
+        schema:authors          courses:2df96521-f7d9-44dc-85ea-21f6cc5af1de , courses:14309997-2596-4ec3-b837-fd3e486fed43 ;
+        schema:description      "Building High Performance Web Apps"^^xsd:string ;
+        schema:duration         courses:69c4ff2e-ed40-4061-a34b-be32cf0d0d8e ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "HTML5 Game Development"^^xsd:string ;
+        schema:publishers       courses:0d6d6ec2-b31f-4e7d-bd95-cae87334da16 ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:2df96521-f7d9-44dc-85ea-21f6cc5af1de
+        a            schema:Person ;
+        schema:name  "Colt McAnlis"^^xsd:string .
+
+courses:14309997-2596-4ec3-b837-fd3e486fed43
+        a            schema:Person ;
+        schema:name  "Peter Lubbers"^^xsd:string .
+
+courses:0d6d6ec2-b31f-4e7d-bd95-cae87334da16
+        a            schema:Organization ;
+        schema:name  "Google"^^xsd:string .
+
+courses:69c4ff2e-ed40-4061-a34b-be32cf0d0d8e
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:5ac3e7b5-f77a-4125-b211-f32a246524fc
+        a                       schema:CreativeWork ;
+        schema:authors          courses:691720ff-c59e-4382-9b21-757349afa303 ;
+        schema:description      "Science of Secrets"^^xsd:string ;
+        schema:duration         courses:e5d99f3a-45f8-4f91-9bdc-650c105829f2 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Applied Cryptography"^^xsd:string ;
+        schema:typicalAgeRange  "advanced"^^xsd:string .
+
+courses:691720ff-c59e-4382-9b21-757349afa303
+        a            schema:Person ;
+        schema:name  "Dave Evans"^^xsd:string .
+
+courses:e5d99f3a-45f8-4f91-9bdc-650c105829f2
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:390c3e6b-855f-480d-9957-ddd27a638fbd
+        a                       schema:CreativeWork ;
+        schema:authors          courses:6ab1cd8f-9506-4f4e-8144-e502c2c51190 ;
+        schema:description      "Making Decisions Based on Data"^^xsd:string ;
+        schema:duration         courses:614cb5ba-f47e-458e-b7c5-878265543f8d ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Statistics"^^xsd:string ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:6ab1cd8f-9506-4f4e-8144-e502c2c51190
+        a            schema:Person ;
+        schema:name  "Sebastian Thrun"^^xsd:string .
+
+courses:614cb5ba-f47e-458e-b7c5-878265543f8d
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:03240813-66c5-4c6d-b5eb-4483d06e7b8a
+        a                       schema:CreativeWork ;
+        schema:authors          courses:cf47fa71-cc17-4847-bd68-7a0ef5af5758 , courses:9c40cdb2-113c-4ddd-b0e7-ea0dab0bf48d ;
+        schema:description      "A Quick Refresher"^^xsd:string ;
+        schema:duration         courses:d4e91bd3-6088-4e25-a119-f4096470fd79 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro Algebra Review"^^xsd:string ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:cf47fa71-cc17-4847-bd68-7a0ef5af5758
+        a            schema:Person ;
+        schema:name  "Kelly Vetter"^^xsd:string .
+
+courses:9c40cdb2-113c-4ddd-b0e7-ea0dab0bf48d
+        a            schema:Person ;
+        schema:name  "Sue Ann Austin"^^xsd:string .
+
+courses:d4e91bd3-6088-4e25-a119-f4096470fd79
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:aa4c5b56-8894-424a-b13e-22ae11df3ed7
+        a                       schema:CreativeWork ;
+        schema:authors          courses:057a3cb3-6f5f-49e4-92f2-66972d95901d ;
+        schema:description      "Bringing Symbols to Life"^^xsd:string ;
+        schema:duration         courses:86b0c6f0-c1cf-4a09-9995-b0b2d64366ee ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "College Algebra"^^xsd:string ;
+        schema:publishers       courses:20d09a38-fc03-49c3-bd68-58d478f6b45a ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:057a3cb3-6f5f-49e4-92f2-66972d95901d
+        a            schema:Person ;
+        schema:name  "Julie Sliva Spitzer"^^xsd:string .
+
+courses:20d09a38-fc03-49c3-bd68-58d478f6b45a
+        a            schema:Organization ;
+        schema:name  "San Jose State University"^^xsd:string .
+
+courses:86b0c6f0-c1cf-4a09-9995-b0b2d64366ee
+        a                   schema:Duration ;
+        schema:description  "4 months"^^xsd:string .
+
+courses:c81bc803-62ec-40ec-a4b2-daf4424b197b
+        a                       schema:CreativeWork ;
+        schema:authors          courses:f2bc45e3-25b9-4ccf-904c-1d0ec1831a7d ;
+        schema:description      "Patterns and Problems"^^xsd:string ;
+        schema:duration         courses:68a1e25e-60e4-41e8-9dfd-d43736cb467c ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Visualizing Algebra"^^xsd:string ;
+        schema:publishers       courses:8b9fe041-e684-4a6f-b9a8-1cc1e796494a ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:f2bc45e3-25b9-4ccf-904c-1d0ec1831a7d
+        a            schema:Person ;
+        schema:name  "Sandra DeSousa"^^xsd:string .
+
+courses:8b9fe041-e684-4a6f-b9a8-1cc1e796494a
+        a            schema:Organization ;
+        schema:name  "San Jose State University"^^xsd:string .
+
+courses:68a1e25e-60e4-41e8-9dfd-d43736cb467c
+        a                   schema:Duration ;
+        schema:description  "4 months"^^xsd:string .
+
+courses:1c14efb1-6aed-40ef-86ad-49cbc2f60e24
+        a                       schema:CreativeWork ;
+        schema:authors          courses:8e47e40b-b1b7-4cdb-9724-da436b448fcb ;
+        schema:description      "How to Make Software Fail"^^xsd:string ;
+        schema:duration         courses:69aa5fc3-f29a-49b8-a7fc-fabac63fe574 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Software Testing"^^xsd:string ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:8e47e40b-b1b7-4cdb-9724-da436b448fcb
+        a            schema:Person ;
+        schema:name  "John Regehr"^^xsd:string .
+
+courses:69aa5fc3-f29a-49b8-a7fc-fabac63fe574
+        a                   schema:Duration ;
+        schema:description  "1 months"^^xsd:string .
+
+courses:3e3dc9af-4fe7-44a5-9983-2b5824adaadd
+        a                       schema:CreativeWork ;
+        schema:authors          courses:59f0caae-0a7e-47e1-81f8-6e614f357bc8 ;
+        schema:description      "Social Network Analysis"^^xsd:string ;
+        schema:duration         courses:d070a6cc-787c-4325-a5db-3ed4a80e4bdb ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Algorithms"^^xsd:string ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:59f0caae-0a7e-47e1-81f8-6e614f357bc8
+        a            schema:Person ;
+        schema:name  "Michael Littman"^^xsd:string .
+
+courses:d070a6cc-787c-4325-a5db-3ed4a80e4bdb
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:74c0ca77-faec-4850-bb48-0d987312a84f
+        a                       schema:CreativeWork ;
+        schema:authors          courses:56e8cda2-f4eb-45bc-9d84-07e002999cfb , courses:b2cad394-b683-4594-9f99-f1ba9ed8daa3 ;
+        schema:description      "AI-Class"^^xsd:string ;
+        schema:duration         courses:6dea805d-2e2a-48c0-8294-b173c69e04ea ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Artificial Intelligence"^^xsd:string ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:56e8cda2-f4eb-45bc-9d84-07e002999cfb
+        a            schema:Person ;
+        schema:name  "Peter Norvig"^^xsd:string .
+
+courses:b2cad394-b683-4594-9f99-f1ba9ed8daa3
+        a            schema:Person ;
+        schema:name  "Sebastian Thrun"^^xsd:string .
+
+courses:6dea805d-2e2a-48c0-8294-b173c69e04ea
+        a                   schema:Duration ;
+        schema:description  "4 months"^^xsd:string .
+
+courses:545bbdbb-0759-4fda-bd66-927691cd72f2
+        a                       schema:CreativeWork ;
+        schema:authors          courses:b4f5078b-7344-4bb3-8782-5f6a40b9f867 ;
+        schema:description      "Creating Virtual Worlds"^^xsd:string ;
+        schema:duration         courses:0984447b-e712-4ec2-ae69-dfc0d1218f45 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Interactive 3D Graphics"^^xsd:string ;
+        schema:publishers       courses:993218fa-3a7e-4448-8c5d-4b2d28410e00 ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:b4f5078b-7344-4bb3-8782-5f6a40b9f867
+        a            schema:Person ;
+        schema:name  "Eric Haines"^^xsd:string .
+
+courses:993218fa-3a7e-4448-8c5d-4b2d28410e00
+        a            schema:Organization ;
+        schema:name  "Autodesk"^^xsd:string .
+
+courses:0984447b-e712-4ec2-ae69-dfc0d1218f45
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:0598401d-d2b6-4f56-952f-02905fe03541
+        a                       schema:CreativeWork ;
+        schema:authors          courses:c199ae71-8016-4e37-b7f8-7c60d3882d9e ;
+        schema:description      "Building a Web Browser"^^xsd:string ;
+        schema:duration         courses:ed10eefa-5692-40a8-b9fa-57f5bfca2c2c ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Programming Languages"^^xsd:string ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:c199ae71-8016-4e37-b7f8-7c60d3882d9e
+        a            schema:Person ;
+        schema:name  "Westley Weimer"^^xsd:string .
+
+courses:ed10eefa-5692-40a8-b9fa-57f5bfca2c2c
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:a32e76e1-a391-4fdb-b23c-26dd50303ca9
+        a                       schema:CreativeWork ;
+        schema:authors          courses:7aa4dfab-704c-44cf-a176-5ec92f3586f0 ;
+        schema:description      "Programming Principles"^^xsd:string ;
+        schema:duration         courses:95f39ce8-741e-4ad3-a9c3-3d25cf9f41d9 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Design of Computer Programs"^^xsd:string ;
+        schema:typicalAgeRange  "advanced"^^xsd:string .
+
+courses:7aa4dfab-704c-44cf-a176-5ec92f3586f0
+        a            schema:Person ;
+        schema:name  "Peter Norvig"^^xsd:string .
+
+courses:95f39ce8-741e-4ad3-a9c3-3d25cf9f41d9
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:b28bed9d-0349-4604-96f7-42078154e5c6
+        a                       schema:CreativeWork ;
+        schema:authors          courses:64ebe86e-87b6-4dde-a473-416f900fb7f6 ;
+        schema:description      "Making Math Matter"^^xsd:string ;
+        schema:duration         courses:8af6174d-86dc-43ad-aafa-c1f73b86fc49 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Differential Equations in Action"^^xsd:string ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:64ebe86e-87b6-4dde-a473-416f900fb7f6
+        a            schema:Person ;
+        schema:name  "Jörn Loviscach"^^xsd:string .
+
+courses:8af6174d-86dc-43ad-aafa-c1f73b86fc49
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:6cee1c97-886e-476a-ad45-869444361239
+        a                       schema:CreativeWork ;
+        schema:authors          courses:6c776336-ac44-4de9-8319-de3105c8b8d8 ;
+        schema:description      "Automating the Boring Tasks"^^xsd:string ;
+        schema:duration         courses:3db62e5a-6b78-47b1-b286-cd81a316089e ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Software Debugging"^^xsd:string ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:6c776336-ac44-4de9-8319-de3105c8b8d8
+        a            schema:Person ;
+        schema:name  "Andreas Zeller"^^xsd:string .
+
+courses:3db62e5a-6b78-47b1-b286-cd81a316089e
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:73aaee77-59ec-40fa-894f-021ed95f9231
+        a                       schema:CreativeWork ;
+        schema:authors          courses:5defd9e8-8f3d-46ad-a8d8-62b59cdca3cc ;
+        schema:description      "Dealing with Challenging Problems"^^xsd:string ;
+        schema:duration         courses:ed7ecb08-ed1e-4b9d-8123-496055189b76 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Theoretical Computer Science"^^xsd:string ;
+        schema:typicalAgeRange  "intermediate"^^xsd:string .
+
+courses:5defd9e8-8f3d-46ad-a8d8-62b59cdca3cc
+        a            schema:Person ;
+        schema:name  "Sebastian Wernicke"^^xsd:string .
+
+courses:ed7ecb08-ed1e-4b9d-8123-496055189b76
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:07b3dbe3-9963-4670-84cb-c5fbff9ddf00
+        a                       schema:CreativeWork ;
+        schema:authors          courses:61e0077f-6ef1-4c74-ae88-02567c5380df , courses:8a38a21b-456f-4483-bfcc-4b6dfef6dbb6 ;
+        schema:description      "How to Verify Chips and Eliminate Bugs"^^xsd:string ;
+        schema:duration         courses:c6a40c5d-a82c-4c0b-8a6a-345200e09b3c ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Functional Hardware Verification"^^xsd:string ;
+        schema:publishers       courses:b9def047-0302-4a73-a211-ffcde352f625 ;
+        schema:typicalAgeRange  "advanced"^^xsd:string .
+
+courses:61e0077f-6ef1-4c74-ae88-02567c5380df
+        a            schema:Person ;
+        schema:name  "Hannes Fröhlich"^^xsd:string .
+
+courses:8a38a21b-456f-4483-bfcc-4b6dfef6dbb6
+        a            schema:Person ;
+        schema:name  "Axel Scherer"^^xsd:string .
+
+courses:b9def047-0302-4a73-a211-ffcde352f625
+        a            schema:Organization ;
+        schema:name  "Cadence"^^xsd:string .
+
+courses:c6a40c5d-a82c-4c0b-8a6a-345200e09b3c
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:8060ee04-b807-4402-a29c-8f3049ba208c
+        a                       schema:CreativeWork ;
+        schema:authors          courses:06f3c9f0-5687-42c7-907a-049a129f26fc ;
+        schema:description      "Landmarks in Physics"^^xsd:string ;
+        schema:duration         courses:d84fa1e6-da16-45a3-805a-fe19617b92a9 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Physics"^^xsd:string ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:06f3c9f0-5687-42c7-907a-049a129f26fc
+        a            schema:Person ;
+        schema:name  "Andy Brown"^^xsd:string .
+
+courses:d84fa1e6-da16-45a3-805a-fe19617b92a9
+        a                   schema:Duration ;
+        schema:description  "2 months"^^xsd:string .
+
+courses:3fa38adf-49fa-4c2c-a688-45bdec8260e8
+        a                       schema:CreativeWork ;
+        schema:authors          courses:9074c6e5-e5eb-4014-a92d-ff2bc6dfc55e , courses:035eebb1-8c02-431f-81fc-af70bf818451 , courses:faceb064-454e-4f1d-ba5a-8251c31f2dec , courses:c4539e87-c51c-4051-812f-3c6114a305f9 , courses:d0c7e646-7b86-40cf-a8fe-001343e9774b ;
+        schema:description      "Introduction to Genetics for Beginners"^^xsd:string ;
+        schema:duration         courses:73ec7830-9ad9-4dce-a588-7ab79d6edafc ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Tales from the Genome"^^xsd:string ;
+        schema:publishers       courses:dd79a058-0834-443d-898e-ba8bc0c13f75 ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:9074c6e5-e5eb-4014-a92d-ff2bc6dfc55e
+        a            schema:Person ;
+        schema:name  "Matthew Cook"^^xsd:string .
+
+courses:035eebb1-8c02-431f-81fc-af70bf818451
+        a            schema:Person ;
+        schema:name  "Lauren Castellano"^^xsd:string .
+
+courses:faceb064-454e-4f1d-ba5a-8251c31f2dec
+        a            schema:Person ;
+        schema:name  "Joanna Mountain"^^xsd:string .
+
+courses:c4539e87-c51c-4051-812f-3c6114a305f9
+        a            schema:Person ;
+        schema:name  "Uta Francke"^^xsd:string .
+
+courses:d0c7e646-7b86-40cf-a8fe-001343e9774b
+        a            schema:Person ;
+        schema:name  "23andMe Team"^^xsd:string .
+
+courses:dd79a058-0834-443d-898e-ba8bc0c13f75
+        a            schema:Organization ;
+        schema:name  "23andMe"^^xsd:string .
+
+courses:73ec7830-9ad9-4dce-a588-7ab79d6edafc
+        a                   schema:Duration ;
+        schema:description  "3 months"^^xsd:string .
+
+courses:352058f7-a390-4467-b06c-3e0bee9d7218
+        a                       schema:CreativeWork ;
+        schema:authors          courses:a90f079f-cdec-4fa6-9548-96aaf9168da5 , courses:571909f5-0de9-4c79-b93e-ae1bdbffea5c ;
+        schema:description      "The Science of Thought and Behavior"^^xsd:string ;
+        schema:duration         courses:5f8f389c-c766-49ab-b63c-338b72d59200 ;
+        schema:hasPart          [ a  <http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq> ] ;
+        schema:name             "Intro to Psychology"^^xsd:string ;
+        schema:publishers       courses:43a6b4fd-12ab-4605-aad4-f3de115ab4cc ;
+        schema:typicalAgeRange  "beginner"^^xsd:string .
+
+courses:a90f079f-cdec-4fa6-9548-96aaf9168da5
+        a            schema:Person ;
+        schema:name  "Susan Snycerski"^^xsd:string .
+
+courses:571909f5-0de9-4c79-b93e-ae1bdbffea5c
+        a            schema:Person ;
+        schema:name  "Greg Feist"^^xsd:string .
+
+courses:43a6b4fd-12ab-4605-aad4-f3de115ab4cc
+        a            schema:Organization ;
+        schema:name  "San Jose State University"^^xsd:string .
+
+courses:5f8f389c-c766-49ab-b63c-338b72d59200
+        a                   schema:Duration ;
+        schema:description  "4 months"^^xsd:string .

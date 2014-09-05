@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Kursevi</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script type="text/javascript" src="js/jQuery1.7.2.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+
+
+                <span class="headerspan" style="font-size: 90px">Kursevi</span></div>
+
+            <div class="content" align="center">
+
+                <select name="izborKursa" onchange="izborkursa(this)">
+                    <option value="cousera">Cousera</option>
+                    <option value="udacity">Udacity</option>
+                    <option value="oba">Oba</option>
+
+                </select>
+
+
+
+                <h2>Parameters</h2>
+
+                <form name="cousera" action="#">
+                    <table class="cousera" width="90%" border="0" style="text-align:center">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">inLanguage:</th>
+                            <th scope="col">publishers</th>
+                            <th scope="col">typicalAgeRange</th>
+                            <th scope="col">duration</th>
+
+                        </tr>
+                        <tr>
+
+                            <td> <input type="text" id="name" name="name" /></td>
+                            <td> <select name="inLanguage"></select></td>
+                            <td> <input type="text" id="publishers" name="publishers" /></td>
+                            <td> <select name="typicalAgeRange"></select></td>
+                            <td> <input type="text" id="duration" name="duration"/></td>
+
+
+                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.cousera.name.value, inLanguage: document.cousera.inLanguage.value, publishers: document.cousera.publishers.value, typicalAgeRange: document.cousera.typicalAgeRange.value, duration: document.cousera.duration.value})" class="classname"/>
+                            </td></tr>
+
+                    </table>
+                </form>
+
+                <form name="udacity" action="#" style="display:none;">
+                    <table class="udacity" width="90%" border="0" style="text-align:center">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">typicalAgeRange:</th>
+                            <th scope="col">duration:</th>
+                            <th scope="col">publishers</th>
+                        </tr>
+                        <tr>
+
+                            <td> <input type="text" id="name" name="name" /></td>
+                            <td> <select name="typicalAgeRange"></select></td>
+                            <td> <input type="text" id="duration" name="duration:" /></td>
+                            <td> <input type="text" id="publishers" name="publishers" /></td>
+
+
+
+                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.cousera.name.value, typicalAgeRange: document.cousera.typicalAgeRange.value, duration: document.cousera.duration.value, publishers: document.cousera.publishers.value})" class="classname"/>
+                            </td></tr>
+
+                    </table>
+                </form>
+
+                <form name="oba" action="#" style="display:none;">
+                    <table class="oba" width="90%" border="0" style="text-align:center">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Duration</th>
+                            <th scope="col">publishers</th>
+                            <th scope="col">typicalAgeRange</th>
+                        </tr>
+                        <tr>
+
+                            <td> <input type="text" id="name" name="name" /></td>
+                            <td> <input type="text" id="duration" name="duration" /></td>
+                            <td> <input type="text" id="publishers" name="publishers" /></td>
+                            <td> <select name="typicalAgeRange"></select></td>
+
+
+                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.cousera.name.value, duration: document.cousera.duration.value, publishers: document.cousera.publishers.value, typicalAgeRange: document.cousera.typicalAgeRange.value})" class="classname"/>
+                            </td></tr>
+
+                    </table>
+                </form>
+
+                <div style="margin-top:20px; padding:5px">
+                    <span class="HeadingText">Result:</span>
+                    <div id="searchResultDiv">  
+                    </div>
+                </div>
+
+                <!-- end .content --></div>
+
+            <div class="footer">
+
+
+            </div>
+            <script>
+
+                function izborkursa(data) {
+                    var value = data.value;
+                    var sveForme = $("form");
+                    $.each(sveForme, function(key, value) {
+                        value.style.display = 'none';
+                    });
+
+                    $("form[name='" + value + "']").show();
+                     
+                };
+                var as = $("select[name=inLanguage]");
+                var typi = $("select[name=typicalAgeRange]");
+                $(document).ready(function(){
+                    $.ajax({
+                         type: 'GET',
+                         url: rootURL+'languages',
+                         
+ 
+                         success: function(data){
+                            $.each(data,function(i,leng){
+                                as.append("<option value="+leng.inLanguage+">"+leng.inLanguage+"</option>");
+                            });
+                            
+                         },
+                         error: function(ex){
+                             alert("Greska!"+ ex);
+                         }
+ 
+ 
+                     });
+                     $.ajax({
+                         type: 'GET',
+                         url: rootURL+'typicalAgeRange',
+                         
+ 
+                         success: function(data){
+                            $.each(data,function(i,typical){
+                                typi.append("<option value="+typical.typicalAgeRange+">"+typical.typicalAgeRange+"</option>");
+                            });
+                            
+                         },
+                         error: function(ex){
+                             alert("Greska!"+ ex);
+                         }
+ 
+ 
+                     });
+                     
+                });
+                //document.load(onload());
+                
+            </script>
+
+
+            <!-- end .container --></div>
+    </body>
+</html>

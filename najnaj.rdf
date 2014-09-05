@@ -1,0 +1,6 @@
+@prefix schema: <http://schema.org/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix products: <http://localhost:8080/MyFirstREST/api/products/> .
+
+<http://thewebsemantic.com/javaclass>
+        a       <http://www.w3.org/2002/07/owl#AnnotationProperty> .

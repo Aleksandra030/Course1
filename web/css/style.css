@@ -1,0 +1,174 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+   /* background: #528ecc;*/
+   background: #ccccff;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+input button {
+   /* background-color: #036;*/
+   background-color: darkgrey;
+   
+}
+
+
+h1, h2, h3, h4, h5, h6, p {	
+    /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+    
+    padding-right: 15px;
+    padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+
+
+
+a:visited {
+    color: #4E5869;
+    
+    text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+    text-decoration: none;
+}
+
+
+
+.header {
+    display:table;
+   /* background: #036;*/
+    background:grey;
+    height: 130px;
+    width: 100%;
+    color: #FFFFFF;
+    text-align: center;
+    margin:0px;
+
+}
+
+.headerspan {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: cursive;
+    font-size: 55px;
+
+}
+
+
+
+/* ~~The footer ~~ */
+.footer {
+    padding-top: 20px;
+    
+  /*  background: #036;*/
+  background: gray;
+    min-height: 60px;
+    color: #FFFFFF;
+    text-align: center;
+    position: relative;/* this gives IE6 hasLayout to properly clear */
+    clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+select {
+    width:150px;
+}
+
+span.HeadingText {
+    font-size:36px;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+
+}
+
+div, table, input, select {
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.coursesDiv {
+    border: solid medium;
+    margin: 10px;
+    padding: 20px;
+}
+
+.tagdiv{
+    float: left;
+    margin:5px;
+    border: solid thin;
+    padding: 3px;
+
+}
+
+.projectTable {
+    width:100%;
+    margin:10px;
+    padding:4px;
+}
+
+.projectTable td {
+    padding: 4px;
+    text-align: left;
+}
+
+
+.classname {
+    -moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+    box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
+    background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+  /*  background-color:#79bbff;*/
+  background:#000000;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #84bbf3;
+    display:inline-block;
+    color:#ffffff;
+    font-family:arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:1px 1px 0px #528ecc;
+    margin: 2px;
+    cursor: pointer;
+}.classname:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff) );
+    background:-moz-linear-gradient( center top, #378de5 5%, #79bbff 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff');
+  /*  background-color:#378de5;*/
+  background:graytext;
+}.classname:active {
+    position:relative;
+    top:1px;
+}
+
+.divider {
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border-top: solid thin;
+    padding-top: 10px;
+
+}
+
+input, select {
+    border:2px solid #000000;
+    border-radius: 3px;
+}
+
+input:hover, select:hover{
+  /*  background-color: #bbdaf7;*/
+  background: graytext;
+  
+}
+
+.text-wrap {
+    border:2px solid #000000;
+    border-radius: 3px;
+}
+
+

@@ -49,10 +49,29 @@ and open the template in the editor.
                             <td> <select name="inLanguage"></select></td>
                             <td> <input type="text" id="publishers" name="publishers" /></td>
                             <td> <select name="typicalAgeRange"></select></td>
-                            <td> <input type="text" id="duration" name="duration"/></td>
+                            <td> <select id="number" name="number">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+
+                                </select>
+                            </td>
+                            <td> <select id="period" name="period">
+                                <option value="D">Day</option>
+                                <option value="W">Week</option>
+                                <option value="M">Month</option>
+                                </select>
+                            </td>
 
 
-                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.cousera.name.value, inLanguage: document.cousera.inLanguage.value, publishers: document.cousera.publishers.value, typicalAgeRange: document.cousera.typicalAgeRange.value, duration: document.cousera.duration.value})" class="classname"/>
+                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.cousera.name.value, inLanguage: document.cousera.inLanguage.value, publishers: document.cousera.publishers.value, typicalAgeRange: document.cousera.typicalAgeRange.value, duration: document.cousera.querySelector('select[name=number]').value+document.cousera.querySelector('select[name=period]').value})" class="classname"/>
                             </td></tr>
 
                     </table>
@@ -75,7 +94,7 @@ and open the template in the editor.
 
 
 
-                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.cousera.name.value, typicalAgeRange: document.cousera.typicalAgeRange.value, duration: document.cousera.duration.value, publishers: document.cousera.publishers.value})" class="classname"/>
+                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.udacity.name.value, typicalAgeRange: document.udacity.querySelector('select[name=typicalAgeRange]').value, duration: document.udacity.duration.value, publishers: document.udacity.publishers.value})" class="classname"/>
                             </td></tr>
 
                     </table>
@@ -97,7 +116,7 @@ and open the template in the editor.
                             <td> <select name="typicalAgeRange"></select></td>
 
 
-                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.cousera.name.value, duration: document.cousera.duration.value, publishers: document.cousera.publishers.value, typicalAgeRange: document.cousera.typicalAgeRange.value})" class="classname"/>
+                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.oba.name.value, duration: document.oba.duration.value, publishers: document.oba.publishers.value, typicalAgeRange: document.oba.typicalAgeRange.value})" class="classname"/>
                             </td></tr>
 
                     </table>
@@ -136,6 +155,7 @@ and open the template in the editor.
                          
  
                          success: function(data){
+                              as.append("<option value=none>none</option>");
                             $.each(data,function(i,leng){
                                 as.append("<option value="+leng.inLanguage+">"+leng.inLanguage+"</option>");
                             });
@@ -153,7 +173,9 @@ and open the template in the editor.
                          
  
                          success: function(data){
+                             typi.append("<option value=none>none</option>");
                             $.each(data,function(i,typical){
+                              
                                 typi.append("<option value="+typical.typicalAgeRange+">"+typical.typicalAgeRange+"</option>");
                             });
                             

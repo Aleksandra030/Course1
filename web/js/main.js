@@ -79,9 +79,9 @@ function showProjects(data) {
     }
     var kurs = $("select[name=izborKursa]").val();
     var klasa = '.'+kurs;
-    $.each(list, function(index, c) {
+    var j=0;
+    $.each(list, function(index, c) {       
         
-        var j=0;
         var lang = "";
         if(c.inLanguage){
             lang = c.inLanguage;
@@ -92,6 +92,9 @@ TypicalAgeRange :<h3>"+c.typicalAgeRange+"</h3></td><td>Language: <h3>"+lang+"</
 <tr><td colspan=\"2\">Link: <h3>"+c.URI+"</h3></td></tr>\n\
 <tr ><td colspan=\"2\"><h3 >Description:</h3>"+c.description+"</td></tr>\n\n\
 <tr class="+j+">");
+if(c.duration){
+    $("."+j).append("<tr ><td colspan=\"2\"><h3>Duration:</h3></td><td colspan=\"2\">"+c.duration.description+"</td></tr>\n");
+}     
 if(c.authors){
     $.each(c.authors, function(i,autor){
         $("."+j).append("<tr ><td colspan=\"2\"><h3>Author:</h3></td><td colspan=\"2\">"+autor.name+"</td></tr>\n");

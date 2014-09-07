@@ -111,7 +111,7 @@ public class QueryService {
             filter += "FILTER regex( ?inLanguage, \"" + inLanguage + "\", \"i\" ) ";
         }
 
-        if (organizationName != null) {
+        if (!organizationName.isEmpty()) {
             System.out.println("usao organiz");
             String[] publishersArray = organizationName.split(",");
             for (int i = 0; i < publishersArray.length; i++) {
@@ -122,14 +122,26 @@ public class QueryService {
 
             }
         }
-          if (!duration.isEmpty()) {
-            System.out.println("usao duration");
+          if (!duration.isEmpty() && ss.getImeKursa().equals("udacity") ){
+            System.out.println("usao duration za udacity");
             where += "?courses schema:duration ?duration. "
                     + "?duration schema:description ?description.";
             filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" ) ";
         }
+            if (!duration.isEmpty() && ss.getImeKursa().equals("cousera")) {
+            System.out.println("usao duration za cousera");
+           where += "?courses schema:hasPart ?hasPart. "
+                    + "?hasPart schema:duration ?duration. "
+                    + "?duration schema:description ?description.";
+            filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" )} ";
+           
+                  
+          //  filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" ) ";
+         //    ?courses a schema:CreativeWork. ";
+            
+        }
 
-        if (typicalAgeRange != null) {
+        if (!typicalAgeRange.isEmpty()) {
             System.out.println("usao typicalagerange");
             where += "?courses schema:typicalAgeRange ?typicalAgeRange. ";
             filter += "FILTER regex( ?typicalAgeRange, \"" + typicalAgeRange + "\", \"i\" ) ";
@@ -220,11 +232,11 @@ public class QueryService {
                 = "PREFIX courses: <" + Constants.NS + "> "
                 + "PREFIX schema: <" + Constants.SCHEMA + "> "
                 + "PREFIX xsd: <" + Constants.XSD + "> "
-                + "SELECT DISTINCT ?lang \n"
-                + "WHERE { ?x schema:inLanguage ?lang }"
-                + "ORDER BY ?lang";
+                + "SELECT DISTINCT ?l \n"
+                + "WHERE { ?x schema:inLanguage ?l }"
+                + "ORDER BY ?l";
 
-        return queryExecutor.executeOneVariableSelectSparqlQuery(queryString, "lang",
+        return queryExecutor.executeOneVariableSelectSparqlQuery(queryString, "l",
                 RDFModel.getInstance().getModel());
     }
 
@@ -233,11 +245,11 @@ public class QueryService {
                 = "PREFIX courses: <" + Constants.NS + "> "
                 + "PREFIX schema: <" + Constants.SCHEMA + "> "
                 + "PREFIX xsd: <" + Constants.XSD + "> "
-                + "SELECT DISTINCT ?lang \n"
-                + "WHERE { ?x schema:typicalAgeRange ?lang }"
-                + "ORDER BY ?lang";
+                + "SELECT DISTINCT ?l \n"
+                + "WHERE { ?x schema:typicalAgeRange ?l }"
+                + "ORDER BY ?l";
 
-        return queryExecutor.executeOneVariableSelectSparqlQuery(queryString, "lang",
+        return queryExecutor.executeOneVariableSelectSparqlQuery(queryString, "l",
                 RDFModel.getInstance().getModel());
     }
 
@@ -246,11 +258,12 @@ public class QueryService {
                 = "PREFIX courses: <" + Constants.NS + "> "
                 + "PREFIX schema: <" + Constants.SCHEMA + "> "
                 + "PREFIX xsd: <" + Constants.XSD + "> "
-                + "SELECT DISTINCT ?lang \n"
-                + "WHERE { ?x rdfs:name ?lang }"
-                + "ORDER BY ?lang";
+                + "SELECT DISTINCT ?l \n"
+                + "WHERE { ?x schema:publishers ?publishers. "
+                +"?publishers schema:name ?l }"
+                + "ORDER BY ?l";
 
-        return queryExecutor.executeOneVariableSelectSparqlQuery(queryString, "lang",
+        return queryExecutor.executeOneVariableSelectSparqlQuery(queryString, "l",
                 RDFModel.getInstance().getModel());
     }
 
@@ -259,9 +272,17 @@ public class QueryService {
                 = "PREFIX courses: <" + Constants.NS + "> "
                 + "PREFIX schema: <" + Constants.SCHEMA + "> "
                 + "PREFIX xsd: <" + Constants.XSD + "> "
-                + "SELECT DISTINCT ?lang \n"
-                + "WHERE { ?x schema:duration ?lang }"
-                + "ORDER BY ?lang";
+                + "SELECT DISTINCT ?l \n"
+                + "WHERE { ?x schema:duration ?duration. "
+                +"?duration schema:description ?l }"
+                + "ORDER BY ?l";
+//http://stackoverflow.com/questions/1223472/sparql-query-and-distinct-count
+////        SELECT ?tag count(distinct ?tag)
+////WHERE {
+////    ?r ns9:taggedWithTag ?tagresource.
+////    ?tagresource ns9:name ?tag
+////}
+////LIMIT 5000
 
         return queryExecutor.executeOneVariableSelectSparqlQuery(queryString, "lang",
                 RDFModel.getInstance().getModel());

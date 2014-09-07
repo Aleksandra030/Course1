@@ -8,6 +8,7 @@ package persistence.dataProvider;
 
 import com.hp.hpl.jena.query.Dataset;
 import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.tdb.TDB;
 import com.hp.hpl.jena.tdb.TDBFactory;
 import com.test.ServiceResource;
 
@@ -17,11 +18,13 @@ import com.test.ServiceResource;
  */
 public class TDBDataProvider implements DataProvider{
 
-    private static final String directory = "C:\\Users\\ANA\\Documents\\NetBeansProjects\\MyFirstREST\\tdb2";
+    public static final String directory = util.Constants.C;
+  //  private String s=kontroler.Kontroler.vratiObj().mapa.get("tdb");
 	private Dataset dataset;
     public TDBDataProvider() {
-      
+   
 		dataset = TDBFactory.createDataset(directory);
+            //   System.out.println(util.Constants.tdb);
 	}
         @Override
     public Model getDataModel() {

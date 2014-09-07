@@ -8,6 +8,7 @@ package com.test;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.hp.hpl.jena.sparql.ARQConstants;
+import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.tdb.TDB;
 import domen.CreativeWork;
 import domen.Duration;
@@ -47,6 +48,7 @@ public class ServiceResource {
 
     public ServiceResource() {
         System.out.println("dosao service resource");
+      
         
     }
 
@@ -100,14 +102,22 @@ public class ServiceResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public String ana(Search ss) throws Exception {
+    public String ana(Search se) throws Exception {
         
+     if(se.getInLanguage().equals("none")){
+     se.setInLanguage("");
      
-        System.out.println(ss.getName() + "ime");
-        System.out.println(ss.getInLanguage() + "language");
-        System.out.println(ss.getPublishers() + "publisher");
-        System.out.print(ss.getTypicalAgeRange() + "tupe");
-        Collection<CreativeWork> courses = s.getCourses(ss);
+     }
+       if(se.getTypicalAgeRange().equals("none")){
+     se.setTypicalAgeRange("");
+     
+     }
+     
+        System.out.println(se.getName() + "ime");
+       System.out.println(se.getInLanguage() + "language");
+        System.out.println(se.getPublishers() + "publisher");
+        System.out.print(se.getTypicalAgeRange() + "tupe");
+        Collection<CreativeWork> courses = s.getCourses(se);
         System.out.println(courses.size() + "lista kod service resource");
         
         JsonArray productArray = new JsonArray();
@@ -157,6 +167,7 @@ public class ServiceResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getLanguages() {
+      //   kontroler.Kontroler.vratiObj().mapa.put("tdb", util.Constants.C);
         Collection<String> lista = s.getLanguages();
         JsonArray productArray = new JsonArray();
         for (String string : lista) {
@@ -187,16 +198,34 @@ public class ServiceResource {
      @Path("/publishers")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<String> getpublishers() {
+    public String getPublishers() {
+ Collection<String> lista =s.getPublishers();
 
-        return s.getPublishers();
+        JsonArray productArray = new JsonArray();
+        for (String string : lista) {
+            JsonObject jsonLan = new JsonObject();
+           jsonLan.addProperty("publishers", string);
+           productArray.add(jsonLan);
+            System.out.println(string);
+        }
+        return productArray.toString();
+       
     }
     @Path("/duration")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<String> getDuration() {
+    public String getDuration() {
 
-        return s.getDuration();
+        Collection<String> lista =s.getDuration();
+
+        JsonArray productArray = new JsonArray();
+        for (String string : lista) {
+            JsonObject jsonLan = new JsonObject();
+           jsonLan.addProperty("duration", string);
+           productArray.add(jsonLan);
+            System.out.println(string);
+        }
+        return productArray.toString();
     }
 //    @GET
 //    @Path("{id}/events")

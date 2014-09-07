@@ -30,47 +30,47 @@ import services.QueryService;
 public class Main {
 
     public static void main(String[] args) {
-   try {
+  // try {
         // BasicConfigurator.configure();
         //  COUSERA
-          Parser parser=new CourseraParser();
-         List<CreativeWork> list1 = parser.parse();
-      //    CourseraParser c=new CourseraParser();
-        //  List<CreativeWork> list1 = c.parse2sAlISTOM();
-            RDFModel.getInstance().write("prviSajtSve.rdf", "TURTLE");
-            TDB.sync(RDFModel.getInstance().getDataset());
-//        ServiceResource ks = new ServiceResource();
-//            String col = ks.getCoursesCousera("", "", "", "beginner","");
-//            System.out.println(col);
-//        Collection<String> li = ks.getLanguages();
-//        System.out.println(li.size() + "br u listi leng");
-//        for (String string : li) {
-//            System.out.println(string);
-//        }
-//        Collection<String> li2 = ks.getDuration();
-//        System.out.println(li2.size() + "br u listi typical");
-//        for (String string1 : li2) {
-//            System.out.println(string1);
-//        }
+//          Parser parser=new CourseraParser();
+//       List<CreativeWork> list1 = parser.parse();
+//      //    CourseraParser c=new CourseraParser();
+//        //  List<CreativeWork> list1 = c.parse2sAlISTOM();
+////   
+//            RDFModel.getInstance().write("dfsfd.rdf", "TURTLE");
+//            TDB.sync(RDFModel.getInstance().getDataset());
+         
+////      ServiceResource ks = new ServiceResource();
+//////            String col = ks.getCoursesCousera("", "", "", "beginner","");
+//////            System.out.println(col);
+//////        Collection<String> li = ks.getLanguages();
+//////        System.out.println(li.size() + "br u listi leng");
+//////        for (String string : li) {
+//////            System.out.println(string);
+//////        }
+////        String li2 = ks.getDuration();
+////        System.out.println(li2 + "br u listi typical");
+       
 
 //            UDACITY 
-//           Parser parser2=new UdacityParser();
-//           List <CreativeWork > list2 = parser2.parse();
-//           
-//           RDFModel.getInstance().write("drugiSajt.rdf", "TURTLE");
+      
+       //    Parser parser2=new UdacityParser();
+         //  List <CreativeWork > list2 = parser2.parse();
+//                    RDFModel.getInstance().write("drugiKurs.rdf", "TURTLE");
 //            TDB.sync(RDFModel.getInstance().getDataset());
 //            ServiceResource ks = new ServiceResource();
 //            String col = ks.getCoursesUdacity("", "", "", "beginner");
 //            System.out.println(col);
             //oba
         //   RDFModel.getInstance().write("oba.rdf", "TURTLE");
-//            DataModelManager.getInstance().closeDataModel();
-        } catch (IOException e) {			
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-           e.printStackTrace();
-        }
+//             RDFModel.getInstance().closeModel();
+//        } catch (IOException e) {			
+//            e.printStackTrace();
+//        } catch (URISyntaxException e) {
+//            e.printStackTrace();
+//        } catch (Exception e) {
+//           e.printStackTrace();
+//        }
     }
 }

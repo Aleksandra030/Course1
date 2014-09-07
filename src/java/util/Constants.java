@@ -14,6 +14,12 @@ public class Constants {
     public static final String SCHEMA = "http://schema.org/";
     public static final String NS = "http://localhost:8080/MyFirstREST/webresources/service/";
     public static final String XSD = "http://www.w3.org/2001/XMLSchema#";
-    public static final String tdb=" C:\\\\Users\\\\ANA\\\\Documents\\\\NetBeansProjects\\\\MyFirstREST\\\\tdb1";
+    public static final String C="C:\\Users\\ANA\\Documents\\NetBeansProjects\\MyFirstREST\\tdb5";
+     public static final String U="C:\\Users\\ANA\\Documents\\NetBeansProjects\\MyFirstREST\\tdb3";
+      public static final String O="C:\\Users\\ANA\\Documents\\NetBeansProjects\\MyFirstREST\\tdb1";
+      
+      
+      
+      
 
 }

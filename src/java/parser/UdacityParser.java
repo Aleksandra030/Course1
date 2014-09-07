@@ -8,14 +8,18 @@ package parser;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import domen.CreativeWork;
 import domen.Duration;
 import domen.Organization;
 import domen.Person;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.text.MessageFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import persistence.RDFModel;
 import util.Constants;
@@ -71,10 +75,13 @@ public class UdacityParser extends Parser{
         String expected_duration_unit = jsonElement.getAsJsonObject().get("expected_duration_unit").getAsString();
     //    System.out.println(expected_duration_unit + " dana");
         String d =expected_duration +" "+expected_duration_unit;
+         
         if (d != null) {
+             String [] niz=d.split(" ");
+            String trajanje=niz[0]+Character.toUpperCase(niz[1].charAt(0));
             Duration duration=new Duration();
             duration.setUri(URIGenerator.generate(duration));
-            duration.setDescription(d);
+            duration.setDescription(trajanje);
             creativeWork.setDuration(duration);
         }
        
@@ -101,4 +108,5 @@ public class UdacityParser extends Parser{
         creativeWork.setUri(URIGenerator.generate(creativeWork));
         return creativeWork;
     }
+    
 }

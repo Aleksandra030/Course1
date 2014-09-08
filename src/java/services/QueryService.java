@@ -135,7 +135,12 @@ public class QueryService {
                     + "?duration schema:description ?description.";
             filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" )} ";
            
-                  
+//              where += "?courses schema:hasPart ?hasPart. "     
+//            + "?hasPart{SELECT ?hasPart WHERE { ?hasPart a schema:CreativeWork. "
+//            + "?hasPart schema:duration ?duration. "
+//                      + "?duration schema:description ?description"
+//                      +" FILTER regex( ?description, \"" + duration + "\", \"i\" )}}";
+            
           //  filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" ) ";
          //    ?courses a schema:CreativeWork. ";
             

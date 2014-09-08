@@ -18,7 +18,7 @@ import com.test.ServiceResource;
  */
 public class TDBDataProvider implements DataProvider{
 
-    public static final String directory =util.Constants.C;
+    public static final String directory =util.Constants.U;
   
    /// public static final String tek=System.getProperty("user.dir")+"\\td5";
   //  private String s=kontroler.Kontroler.vratiObj().mapa.get("tdb");

@@ -50,28 +50,30 @@ and open the template in the editor.
                             <td> <input type="text" id="publishers" name="publishers" /></td>
                             <td> <select name="typicalAgeRange"></select></td>
                             <td> <select id="number" name="number">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
+                                    <option value="none">none</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
 
                                 </select>
                             </td>
                             <td> <select id="period" name="period">
-                                <option value="D">Day</option>
-                                <option value="W">Week</option>
-                                <option value="M">Month</option>
+                                    <option value="no">none</option>
+                                    <option value="D">Day</option>
+                                    <option value="W">Week</option>
+                                    <option value="M">Month</option>
                                 </select>
                             </td>
 
 
-                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.cousera.name.value, inLanguage: document.cousera.inLanguage.value, publishers: document.cousera.publishers.value, typicalAgeRange: document.cousera.typicalAgeRange.value, duration: document.cousera.querySelector('select[name=number]').value+document.cousera.querySelector('select[name=period]').value})" class="classname"/>
+                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.cousera.name.value, inLanguage: document.cousera.inLanguage.value, publishers: document.cousera.publishers.value, typicalAgeRange: document.cousera.typicalAgeRange.value, duration: document.cousera.querySelector('select[name=number]').value + document.cousera.querySelector('select[name=period]').value})" class="classname"/>
                             </td></tr>
 
                     </table>
@@ -144,52 +146,49 @@ and open the template in the editor.
                     });
 
                     $("form[name='" + value + "']").show();
-                     
-                };
+
+                }
+                ;
                 var as = $("select[name=inLanguage]");
                 var typi = $("select[name=typicalAgeRange]");
-                $(document).ready(function(){
+                $(document).ready(function() {
                     $.ajax({
-                         type: 'GET',
-                         url: rootURL+'languages',
-                         
- 
-                         success: function(data){
-                              as.append("<option value=none>none</option>");
-                            $.each(data,function(i,leng){
-                                as.append("<option value="+leng.inLanguage+">"+leng.inLanguage+"</option>");
+                        type: 'GET',
+                        url: rootURL + 'languages',
+                        success: function(data) {
+                            as.append("<option value=none>none</option>");
+                            $.each(data, function(i, leng) {
+                                as.append("<option value=" + leng.inLanguage + ">" + leng.inLanguage + "</option>");
                             });
-                            
-                         },
-                         error: function(ex){
-                             alert("Greska!"+ ex);
-                         }
- 
- 
-                     });
-                     $.ajax({
-                         type: 'GET',
-                         url: rootURL+'typicalAgeRange',
-                         
- 
-                         success: function(data){
-                             typi.append("<option value=none>none</option>");
-                            $.each(data,function(i,typical){
-                              
-                                typi.append("<option value="+typical.typicalAgeRange+">"+typical.typicalAgeRange+"</option>");
+
+                        },
+                        error: function(ex) {
+                            alert("Greska!" + ex);
+                        }
+
+
+                    });
+                    $.ajax({
+                        type: 'GET',
+                        url: rootURL + 'typicalAgeRange',
+                        success: function(data) {
+                            typi.append("<option value=none>none</option>");
+                            $.each(data, function(i, typical) {
+
+                                typi.append("<option value=" + typical.typicalAgeRange + ">" + typical.typicalAgeRange + "</option>");
                             });
-                            
-                         },
-                         error: function(ex){
-                             alert("Greska!"+ ex);
-                         }
- 
- 
-                     });
-                     
+
+                        },
+                        error: function(ex) {
+                            alert("Greska!" + ex);
+                        }
+
+
+                    });
+
                 });
                 //document.load(onload());
-                
+
             </script>
 
 

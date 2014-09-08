@@ -112,6 +112,12 @@ public class ServiceResource {
      se.setTypicalAgeRange("");
      
      }
+       System.out.println(se.getDuration()+"pre");
+       if(se.getDuration().contains("no")){
+           
+       se.setDuration("");
+       }
+         System.out.println(se.getDuration()+"posle");
      
         System.out.println(se.getName() + "ime");
        System.out.println(se.getInLanguage() + "language");

@@ -34,12 +34,11 @@ public class QueryService {
             where += "?courses schema:name ?name. ";
             filter += "FILTER regex( ?name, \"" + name + "\", \"i\" ) ";
         }
-        if ( inLanguage!=null) {
+        if (inLanguage != null) {
             System.out.println("usao inlanguage");
             where += "?courses schema:inLanguage ?inLanguage. ";
             filter += "FILTER regex( ?inLanguage, \"" + inLanguage + "\", \"i\" ) ";
         }
-
 
         if (!organizationName.isEmpty()) {
             System.out.println("usao organiz");
@@ -91,7 +90,7 @@ public class QueryService {
         String inLanguage = ss.getInLanguage();
         String organizationName = ss.getPublishers();
         String typicalAgeRange = ss.getTypicalAgeRange();
-        String duration=ss.getDuration();
+        String duration = ss.getDuration();
 
         System.out.println("stigao do ovde");
         String where = " ?courses a schema:CreativeWork. ";
@@ -122,28 +121,29 @@ public class QueryService {
 
             }
         }
-          if (!duration.isEmpty() && ss.getImeKursa().equals("udacity") ){
-            System.out.println("usao duration za udacity");
-            where += "?courses schema:duration ?duration. "
-                    + "?duration schema:description ?description.";
-            filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" ) ";
-        }
-            if (!duration.isEmpty() && ss.getImeKursa().equals("cousera")) {
-            System.out.println("usao duration za cousera");
-           where += "?courses schema:hasPart ?hasPart. "
-                    + "?hasPart schema:duration ?duration. "
-                    + "?duration schema:description ?description.";
-            filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" )} ";
-           
-//              where += "?courses schema:hasPart ?hasPart. "     
-//            + "?hasPart{SELECT ?hasPart WHERE { ?hasPart a schema:CreativeWork. "
-//            + "?hasPart schema:duration ?duration. "
-//                      + "?duration schema:description ?description"
-//                      +" FILTER regex( ?description, \"" + duration + "\", \"i\" )}}";
-            
+        if (!duration.isEmpty()) {
+
+            if (ss.getImeKursa().equals("udacity")) {
+                System.out.println("usao duration za udacity");
+                where += "?courses schema:duration ?duration. "
+                        + "?duration schema:description ?description.";
+                filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" ) ";
+            }
+            if (ss.getImeKursa().equals("cousera")) {
+                System.out.println("usao duration za cousera");
+        where += "?courses schema:duration ?duration. "
+                        + "?duration schema:description ?description.";
+                filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" ) ";
+
+//                where += "?courses schema:hasPart ?hasPart. "
+//                        + "?hasPart IN {SELECT ?hasPart WHERE { "
+//                        + "?courses schema:duration ?duration. "
+//                        + "?duration schema:description ?description"
+//                        + " FILTER regex( ?description, \"" + duration + "\", \"i\" ) }";
+
           //  filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" ) ";
-         //    ?courses a schema:CreativeWork. ";
-            
+                //    ?courses a schema:CreativeWork. ";
+            }
         }
 
         if (!typicalAgeRange.isEmpty()) {
@@ -218,7 +218,7 @@ public class QueryService {
                         RDFModel.getInstance().getModel());
 
         for (String string : coursesUris) {
-            CreativeWork c= getCousera(string);
+            CreativeWork c = getCousera(string);
             products.add(c);
         }
         System.out.println(products.size() + "br ulisti");
@@ -265,7 +265,7 @@ public class QueryService {
                 + "PREFIX xsd: <" + Constants.XSD + "> "
                 + "SELECT DISTINCT ?l \n"
                 + "WHERE { ?x schema:publishers ?publishers. "
-                +"?publishers schema:name ?l }"
+                + "?publishers schema:name ?l }"
                 + "ORDER BY ?l";
 
         return queryExecutor.executeOneVariableSelectSparqlQuery(queryString, "l",
@@ -279,7 +279,7 @@ public class QueryService {
                 + "PREFIX xsd: <" + Constants.XSD + "> "
                 + "SELECT DISTINCT ?l \n"
                 + "WHERE { ?x schema:duration ?duration. "
-                +"?duration schema:description ?l }"
+                + "?duration schema:description ?l }"
                 + "ORDER BY ?l";
 //http://stackoverflow.com/questions/1223472/sparql-query-and-distinct-count
 ////        SELECT ?tag count(distinct ?tag)
@@ -292,6 +292,5 @@ public class QueryService {
         return queryExecutor.executeOneVariableSelectSparqlQuery(queryString, "lang",
                 RDFModel.getInstance().getModel());
     }
-
 
 }

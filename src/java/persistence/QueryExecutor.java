@@ -33,7 +33,7 @@ System.out.println("dosao");
 		// Execute the query and obtain results
 		QueryExecution qe = QueryExecutionFactory.create(q, model);
 		ResultSet resultSet = qe.execSelect();
-System.out.println(resultSet.toString()+"queryExecutor");
+
 		while (resultSet.hasNext()) {
 			try {
 				QuerySolution solution = resultSet.nextSolution();

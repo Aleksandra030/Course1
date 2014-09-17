@@ -6,26 +6,23 @@
 
 
 var rootURL = "http://localhost:8080/MyFirstREST/webresources/service/";
-var page = 0;
 
-//function getData() {
-//
-//    //   search(1);
-//}
+
+
 function search(jsObject) {
     
 
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
-        //promeniii
-        url: rootURL + 'ana',
+        
+        url: rootURL + 'courses',
         dataType: "json",
         data: formToJSON(jsObject),
         success: showProjects,
         error: function(jqXHR, textStatus, errorThrown) {
             
-            alert('Greska: ' + errorThrown + "\r\n Nije uspelo dovlačenje podataka sa servera. Proverite da li je server pokrenut.");
+            alert('Greska: ' + errorThrown + "\r\n Nije uspelo dovlačenje podataka sa servera.");
         }
     });
     
@@ -34,30 +31,6 @@ function search(jsObject) {
 function formToJSON(jsObject) {
     
     var a = JSON.stringify(jsObject);
-
-//    var inLanguage = $('#inLanguage').val();
-//    if (inLanguage == '')
-//        inLanguage = null;
-//    var publishers = $('#publishers').val();
-//    if (publishers == '')
-//        publishers = null;
-//    var typicalAgeRange = $('#typicalAgeRange').val();
-//    if (typicalAgeRange == '')
-//        typicalAgeRange = null;
-//
-//    var name = $('#name').val();
-//    if (name == '')
-//        name = null;
-//
-//
-//    var a = JSON.stringify({
-//        "name": name,
-//        "inLanguage": inLanguage,
-//        "publishers": publishers,
-//        "typicalAgeRange": typicalAgeRange,
-//       
-//
-//    });
     console.log(a);
     return a;
 }
@@ -67,15 +40,15 @@ function showProjects(data) {
 
     var list = data == null ? [] : (data instanceof Array ? data : [data]);
 
-    //$('#selectLic option').remove();    
+    $('#searchResultDiv').html('');
     var coursesDiv = "";
 
     if (list.length == 0) {
         if (page > 1)
             search(page - 1);
         else
-            $('#searchResultDiv').html("<span class=\"HeadingText\">No matches!</span>")
-        return;
+            $('#searchResultDiv').html("<span class=\"HeadingText\">Nema podataka po zadatim vrednostima!</span>")
+        return;atches
     }
     var kurs = $("select[name=izborKursa]").val();
     var klasa = '.'+kurs;
@@ -88,8 +61,8 @@ function showProjects(data) {
         }
         $('#searchResultDiv').append("<div class=\"coursesDiv\">\n\
 <table class=\"projectTable\"><tr><td width=\"60%\" align=left><h1>"+c.name+"</h1></td><td>\n\
-TypicalAgeRange :<h3>"+c.typicalAgeRange+"</h3></td><td>Language: <h3>"+lang+"</h3></td></tr>\n\
-<tr><td colspan=\"2\">Link: <h3>"+c.URI+"</h3></td></tr>\n\
+TypicalAgeRange :<h3>"+c.typicalAgeRange+"</h3></td><td>Language: <h3>"+lang+"</h3></td><td>\n\</tr>\n\
+<tr><td colspan=\"2\">Link: <h3><a href="+c.license+">"+c.license+"</a></h3></td></tr>\n\
 <tr ><td colspan=\"2\"><h3 >Description:</h3>"+c.description+"</td></tr>\n\n\
 <tr class="+j+">");
 if(c.duration){
@@ -117,8 +90,7 @@ if(c.session){
 j++;
 });
 
-    //$('#searchResultDiv').html(projectDiv);
-    $('#searchResultDiv').slideDown(500);
+   
 
 
 }

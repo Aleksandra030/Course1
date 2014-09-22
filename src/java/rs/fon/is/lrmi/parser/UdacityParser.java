@@ -43,7 +43,7 @@ public class UdacityParser extends Parser{
             CreativeWork creativeWork = parseCreativeWork(jsonElement);
             RDFModel.getInstance().save(creativeWork);
             list.add(creativeWork);
-            System.out.println("dodao");
+         
         }
         return list;
     }
@@ -98,11 +98,11 @@ public class UdacityParser extends Parser{
         }
         
          boolean objLink = jsonElement.getAsJsonObject().has("homepage");
-        System.out.println(objLink+"link");
+   
         if (objLink == true) {
             String link = jsonElement.getAsJsonObject().get("homepage").getAsString();
             if (link != null) {
-                System.out.println(link+"usao");
+               
                 creativeWork.setLicense(new URI(link));
             } 
         }
@@ -111,8 +111,8 @@ public class UdacityParser extends Parser{
         
         Organization o=new Organization();
         o.setName("Udacity");
-        o.setUri(new URI("https://www.udacity.com/"));
-        System.out.println("ovde");
+        o.setUri(new URI("https://www.udacity.com"));
+      
         creativeWork.setProvider(o);
        
         creativeWork.setUri(URIGenerator.generate(creativeWork));

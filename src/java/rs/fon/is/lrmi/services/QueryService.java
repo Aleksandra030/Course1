@@ -101,6 +101,7 @@ public class QueryService {
 
         System.out.println("stigao do ovde");
         String where = " ?courses a schema:CreativeWork. ";
+        
         String filter = "";
         System.out.println(name + "name");
         System.out.println(inLanguage + "inLanguage");
@@ -129,16 +130,26 @@ public class QueryService {
             }
         }
         if (!duration.isEmpty()) {
-//udacity
-            if (ss.getImeKursa().equals("Udacity")||ss.getImeKursa().equals("Oba")) {
-                System.out.println("usao duration za udacity");
+
+          //  if (ss.getImeKursa().equals("Udacity")||ss.getImeKursa().equals("Oba")) {
+                System.out.println(ss.getImeKursa());
+                System.out.println("usao duration za udacitysdfsfd");
                 where += "?courses schema:duration ?duration. "
                         + "?duration schema:description ?description. ";
                 filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" ) ";
-            }
-            if (ss.getImeKursa().equals("Coursera")||ss.getImeKursa().equals("Oba")) {
-                System.out.println("usao duration za cousera");
-        where +="OPTIONAL {?courses schema:isPartOf ?isPartOf. }";
+         //   }
+//            if (ss.getImeKursa().equals("Coursera")||ss.getImeKursa().equals("Oba")) {
+//                System.out.println("usao duration za cousera");
+//              //  Coursera
+//                System.out.println(ss.getImeKursa());
+//        where +=   "OPTIONAL {?courses schema:hasPart ?hasPart. }";
+              
+//                filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" ) ";
+//                "?courses schema:CreativeWork. "
+//                        + "?hasPart schema:duration ?duration. "
+//                +"?duration schema:description ?description. ";
+                //"OPTIONAL {?courses schema:isPartOf ?isPartOf. }";
+              
                 
                
     //   "OPTIONAL {?courses schema:isPartOf ?isPartOf. } "
@@ -149,7 +160,7 @@ public class QueryService {
 //                
              //   filter += "FILTER (!bound(?isPartOf) && ?description= \"" + duration + "\") ";
                 
-               filter += "FILTER (!bound(?isPartOf)) ";
+       //   filter += "FILTER (bound(?hasPart)) ";
 
 //                where += "?courses schema:hasPart ?hasPart. "
 //                        + "?hasPart IN {SELECT ?hasPart WHERE { "
@@ -158,9 +169,8 @@ public class QueryService {
 //                        + " FILTER regex( ?description, \"" + duration + "\", \"i\" ) }";
 
           //  filter += "FILTER regex( ?description, \"" + duration + "\", \"i\" ) ";
-                //    ?courses a schema:CreativeWork. ";
-            }
-        }
+         //   }
+       }
 
         if (!typicalAgeRange.isEmpty()) {
             System.out.println("usao typicalagerange");
@@ -168,8 +178,7 @@ public class QueryService {
             filter += "FILTER regex( ?typicalAgeRange, \"" + typicalAgeRange + "\", \"i\" ) ";
         }
          if (ss.getImeKursa().equals("Udacity")||ss.getImeKursa().equals("Coursera")) {
-                System.out.println("usao duration za udacity");
-                where += "?courses schema:provider ?provider. "
+                               where += "?courses schema:provider ?provider. "
                         + "?provider schema:name ?name. ";
                 filter += "FILTER regex( ?name, \"" + ss.getImeKursa() + "\", \"i\" ) ";
          }
@@ -305,7 +314,7 @@ public class QueryService {
                 + "ORDER BY ?l";
 
 
-        return queryExecutor.executeOneVariableSelectSparqlQuery(queryString, "lang",
+        return queryExecutor.executeOneVariableSelectSparqlQuery(queryString, "l",
                 RDFModel.getInstance().getModel());
     }
 

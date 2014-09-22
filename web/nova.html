@@ -23,10 +23,6 @@ and open the template in the editor.
             <div class="content" align="center">
 
                 <select id="izborKursa" name="izborKursa" onchange="izborkursa(this)">
-                    <!--  <option value="cousera">Cousera</option>
-                      <option value="udacity">Udacity</option>
-                      <option value="oba">Oba</option>-->
-
                 </select>
 
 
@@ -51,7 +47,8 @@ and open the template in the editor.
                             <td> <select name="typicalAgeRange"></select></td>
 
                             <td> <select id="number" name="number">
-                                    <option value="all">all</option>
+
+                                   <option value="all">all</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -62,7 +59,6 @@ and open the template in the editor.
                                     <option value="8">8</option>
                                     <option value="9">9</option>
                                     <option value="10">10</option>
-
                                 </select>
                                 <select id="period" name="period">
                                     <option value="all">all</option>
@@ -73,91 +69,6 @@ and open the template in the editor.
                             </td>
 
                         </tr><tr><td colspan="6"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.Coursera.name.value, inLanguage: document.Coursera.inLanguage.value, publishers: document.Coursera.publishers.value, typicalAgeRange: document.Coursera.typicalAgeRange.value, duration: document.Coursera.querySelector('select[name=number]').value + document.Coursera.querySelector('select[name=period]').value})" class="classname"/>
-                            </td></tr>
-
-                    </table>
-                </form>
-
-                <form name="Udacity" action="#" style="display:none;">
-                    <table class="Udacity" width="90%" border="0" style="text-align:center">
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">TypicalAgeRange:</th>
-                            <th scope="col">Duration:</th>
-                            <th scope="col">Publishers</th>
-                        </tr>
-                        <tr>
-
-                            <td> <input type="text" id="name" name="name" /></td>
-                            <td> <select name="typicalAgeRange"></select></td>
-                            <td> <select id="number" name="number">
-                                    <option value="all">all</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-
-                                </select>
-                                <select id="period" name="period">
-                                    <option value="all">all</option>
-                                    <option value="D">Day</option>
-                                    <option value="W">Week</option>
-                                    <option value="M">Month</option>
-                                </select>
-                            </td>
-                            <td> <input type="text" id="publishers" name="publishers" /></td>
-
-
-
-                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.Udacity.name.value, typicalAgeRange: document.Udacity.querySelector('select[name=typicalAgeRange]').value, duration: document.Udacity.querySelector('select[name=number]').value + document.Udacity.querySelector('select[name=period]').value, publishers: document.Udacity.publishers.value})" class="classname"/>
-                            </td></tr>
-
-                    </table>
-                </form>
-
-                <form name="Oba" action="#" style="display:none;">
-                    <table class="Oba" width="90%" border="0" style="text-align:center">
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Duration</th>
-                            <th scope="col">Publishers</th>
-                            <th scope="col">TypicalAgeRange</th>
-                        </tr>
-                        <tr>
-
-                            <td> <input type="text" id="name" name="name" /></td>
-                            <td> <select id="number" name="number">
-                                    <option value="all">all</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-
-                                </select>
-                                <select id="period" name="period">
-                                    <option value="all">all</option>
-                                    <option value="D">Day</option>
-                                    <option value="W">Week</option>
-                                    <option value="M">Month</option>
-                                </select>
-                            </td>
-                            <td> <input type="text" id="publishers" name="publishers" /></td>
-                            <td> <select name="typicalAgeRange"></select></td>
-
-
-                        </tr><tr><td colspan="5"><input type="button" id="btnSearch" name="btnSearch" value="Search" onclick="search({imeKursa: document.querySelector('select[name=izborKursa]').value, name: document.Oba.name.value, duration: document.Oba.querySelector('select[name=number]').value + document.Oba.querySelector('select[name=period]').value, publishers: document.Oba.publishers.value, typicalAgeRange: document.Oba.typicalAgeRange.value})" class="classname"/>
                             </td></tr>
 
                     </table>
@@ -177,81 +88,94 @@ and open the template in the editor.
             </div>
 
 
- <script type="text/javascript" src="js/main.js"></script>
+            <script type="text/javascript" src="js/main.js"></script>
             <script>
-                var selectKursa = $('select[name="izborKursa"]');
-                $.ajax({
-                    type: 'GET',
-                    url: rootURL + 'link',
-                    success: function(data) {
 
-                        $.each(data, function(i, kurs) {
-                            selectKursa.append("<option value=" + kurs.naziv + ">" + kurs.naziv + "</option>");
-                        });
-                        selectKursa.append("<option value=Oba>Oba</option>");
+                            var selectKursa = $('select[name="izborKursa"]');
 
-                    },
-                    error: function(ex) {
-                        alert("Greska!" + ex);
-                    }
-
-
-                });
-
-
-                function izborkursa(data) {
-                    var value = data.value;
-                    var sveForme = $("form");
-                    $.each(sveForme, function(key, value) {
-                        value.style.display = 'none';
-                    });
-
-                    $("form[name='" + value + "']").show();
-
-                }
-                ;
-                var as = $("select[name=inLanguage]");
-                var typi = $("select[name=typicalAgeRange]");
-                $(document).ready(function() {
-                    $.ajax({
-                        type: 'GET',
-                        url: rootURL + 'languages',
-                        success: function(data) {
-                            as.append("<option value=all>all</option>");
-                            $.each(data, function(i, leng) {
-                                as.append("<option value=" + leng.inLanguage + ">" + leng.inLanguage + "</option>");
+                            $.ajax({
+                                type: 'GET',
+                                url: rootURL + 'link',
+                                success: function(data) {
+                                    $.each(data, function(i, kurs) {
+                                        selectKursa.append("<option value=" + kurs.naziv + ">" + kurs.naziv + "</option>");
+                                    });
+                                    selectKursa.append("<option value=Oba>Oba</option>");
+ },
                             });
 
-                        },
-                        error: function(ex) {
-                            alert("Greska!" + ex);
-                        }
 
 
-                    });
-                    $.ajax({
-                        type: 'GET',
-                        url: rootURL + 'typicalAgeRange',
-                        success: function(data) {
-                            typi.append("<option value=all>all</option>");
-                            $.each(data, function(i, typical) {
+                            function izborkursa(data) {
+                                var value = data.value;
+                                var sveForme = $("form");
+                                //$.each(sveForme, function(key, value) {
+                                //  value.style.display = 'none';
+                                //});
 
-                                typi.append("<option value=" + typical.typicalAgeRange + ">" + typical.typicalAgeRange + "</option>");
+                                //$("form[name='" + value + "']").show();
+
+                                if (value == "Udacity") {
+                                    $("select[name=inLanguage]").attr('disabled', true);
+                                }
+                                if (value == "Oba") {
+                                    $("select[name=inLanguage]").attr('disabled', true);
+                                }
+
+                            }
+                            ;
+                            var as = $("select[name=inLanguage]");
+                            var typi = $("select[name=typicalAgeRange]");
+                            var age = $("select[name=number]");
+
+                            $(document).ready(function() {
+                                setTimeout(function() {
+                                    $.ajax({
+                                        type: 'GET',
+                                        url: rootURL + 'languages',
+                                        success: function(data) {
+                                            as.append("<option value=all>all</option>");
+                                            $.each(data, function(i, leng) {
+                                                as.append("<option value=" + leng.inLanguage + ">" + leng.inLanguage + "</option>");
+                                            });
+
+                                        },
+                                    });
+                                }, 20000);
+                                setTimeout(function() {
+                                    $.ajax({
+                                        type: 'GET',
+                                        url: rootURL + 'typicalAgeRange',
+                                        success: function(data) {
+                                            typi.append("<option value=all>all</option>");
+                                            $.each(data, function(i, typical) {
+
+                                                typi.append("<option value=" + typical.typicalAgeRange + ">" + typical.typicalAgeRange + "</option>");
+                                            });
+
+                                        },
+                                    });
+                                }, 15000);
+                              //  setTimeout(function() {
+                                 //   $.ajax({
+                                   //     type: 'GET',
+                                      //  url: rootURL + 'duration',
+                                     //   success: function(data) {
+                                    //        age.append("<option value=all>all</option>");
+                                       //     $.each(data, function(i, typical) {
+
+                                            //    age.append("<option value=" + typical.d + ">" + typical.d + "</option>");
+                                    //        });
+
+                                   //     },
+                               //     });
+                          //      }, 12000);
+
                             });
-
-                        },
-                        error: function(ex) {
-                            alert("Greska!" + ex);
-                        }
-
-
-                    });
-
-                });
-                //document.load(onload());
+                            //document.load(onload());
 
             </script>
-           
+
             <!-- end .container --></div>
     </body>
 </html>

@@ -33,7 +33,7 @@ public class CreativeWork extends Thing {
 
     // TODO
     @RdfProperty(Constants.SCHEMA + "hasPart")
-    private List<CreativeWork> children;
+    private Collection<CreativeWork> children;
 
     @RdfProperty(Constants.SCHEMA + "inLanguage")
     private String inLanguage;
@@ -52,6 +52,16 @@ public class CreativeWork extends Thing {
     private Organization provider;
     @RdfProperty(Constants.SCHEMA + "license")
     private URI license;
+      @RdfProperty(Constants.SCHEMA + "position")
+    private int position;
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
 
     public URI getLicense() {
         return license;
@@ -78,11 +88,11 @@ public class CreativeWork extends Thing {
         this.parent = parent;
     }
 
-    public List<CreativeWork> getChildren() {
+    public Collection<CreativeWork> getChildren() {
         return children;
     }
 
-    public void setChildren(List<CreativeWork> children) {
+    public void setChildren(Collection<CreativeWork> children) {
         this.children = children;
     }
 

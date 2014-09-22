@@ -30,7 +30,7 @@ import rs.fon.is.lrmi.services.QueryService;
 public class Main {
 
     public static void main(String[] args) {
-//   try {
+   //try {
         // BasicConfigurator.configure();
         //  COUSERA
 //          Parser parser=new CourseraParser();
@@ -40,7 +40,12 @@ public class Main {
 //   
            
          
-      ServiceResource ks = new ServiceResource();
+     ServiceResource ks = new ServiceResource();
+    String ss=ks.getDuration();
+     //   for (String string : ss) {
+            System.out.println(ss);
+     //   }
+     
 //////            String col = ks.getCoursesCousera("", "", "", "beginner","");
 //////            System.out.println(col);
 //         Collection<String>  li = ks.getLink();
@@ -56,9 +61,9 @@ public class Main {
 
 //            UDACITY 
       
-//           Parser parser2=new UdacityParser();
+     //      Parser parser2=new UdacityParser();
 //           List <CreativeWork > list2 = parser2.parse();
-//        RDFModel.getInstance().write("hh.rdf", "TURTLE");
+//        RDFModel.getInstance().write("listaKurseva.rdf", "TURTLE");
 //            TDB.sync(RDFModel.getInstance().getDataset());
 //                    RDFModel.getInstance().write("dr.rdf", "TURTLE");
 //            TDB.sync(RDFModel.getInstance().getDataset());

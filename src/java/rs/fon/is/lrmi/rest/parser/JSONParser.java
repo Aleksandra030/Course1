@@ -61,7 +61,7 @@ public class JSONParser {
 
         }
           jsonCreateWork.add("session", nameSession);
-     jsonCreateWork.addProperty("provider",p.getProvider().toString());
+   //  jsonCreateWork.addProperty("provider",p.getProvider().toString());
      JsonObject jsonProvider = new JsonObject();
 
         jsonProvider.addProperty("name", p.getProvider().getName());
@@ -98,6 +98,7 @@ public class JSONParser {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         jsonEvent.addProperty("startDate", (creativeWork.getDateCreated() == null) ? "" : sdf.format(creativeWork.getDateCreated()));
         jsonEvent.add("duration", serijalizeDuration(creativeWork.getDuration()));
+        jsonEvent.addProperty("position", creativeWork.getPosition());
 
         return jsonEvent;
     }

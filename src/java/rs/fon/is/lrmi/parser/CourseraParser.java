@@ -44,25 +44,25 @@ public class CourseraParser extends Parser {
             URISyntaxException, ParseException {
         List<CreativeWork> list = new ArrayList<>();
         JsonArray searchResults = ParserUtil.vratiPodatke(LISTAKURSEVA, "elements");
-        
+
         for (JsonElement jsonElement : searchResults) {
-             boolean obj = jsonElement.getAsJsonObject().has("id");
-             if(obj==true){
-            int id = jsonElement.getAsJsonObject().get("id").getAsInt();
-            System.out.println(id + "idd");
-            String c = Integer.toString(id);
-            String url = MessageFormat.format(COUSERA, c);
-            JsonArray searchResults2 = ParserUtil.vratiPodatke(url, "elements");
-            System.out.println("rez" + searchResults);
-            if (!searchResults.isJsonNull()) {
-                for (JsonElement jsonElement1 : searchResults2) {
-                    CreativeWork creativeWork = parseCreativeWork(jsonElement1);
-                    RDFModel.getInstance().save(creativeWork);
-                    System.out.println("dodao");
-                    list.add(creativeWork);
+            boolean obj = jsonElement.getAsJsonObject().has("id");
+            if (obj == true) {
+                int id = jsonElement.getAsJsonObject().get("id").getAsInt();
+                System.out.println(id + "idd");
+                String c = Integer.toString(id);
+                String url = MessageFormat.format(COUSERA, c);
+                JsonArray searchResults2 = ParserUtil.vratiPodatke(url, "elements");
+                System.out.println("rez" + searchResults);
+                if (!searchResults.isJsonNull()) {
+                    for (JsonElement jsonElement1 : searchResults2) {
+                        CreativeWork creativeWork = parseCreativeWork(jsonElement1);
+                        RDFModel.getInstance().save(creativeWork);
+                        System.out.println("dodao");
+                        list.add(creativeWork);
+                    }
                 }
             }
-             }
         }
         System.out.println(list.size() + "list");
         return list;
@@ -70,7 +70,7 @@ public class CourseraParser extends Parser {
 
     static CreativeWork parseCreativeWork(JsonElement jsonElement) throws IOException, ParseException, URISyntaxException {
         CreativeWork creativeWork = new CreativeWork();
-      
+
         int id = jsonElement.getAsJsonObject().get("id").getAsInt();
         System.out.println(id + "id");
 
@@ -113,7 +113,7 @@ public class CourseraParser extends Parser {
 
                 }
                 creativeWork.setTypicalAgeRange(ta);
-            } 
+            }
         }
         boolean objDest = jsonElement.getAsJsonObject().has("shortDescription");
         if (objDest == true) {
@@ -131,14 +131,14 @@ public class CourseraParser extends Parser {
             JsonArray universities = links.get("universities").getAsJsonArray();
             for (JsonElement jsonElement2 : universities) {
                 int u = jsonElement2.getAsJsonPrimitive().getAsInt();
-                    System.out.println(universities + "universities");
-                    Organization organization = parseOrganization(u);
-                    
-                    if(organization.getName()!=null){
-                        System.out.println("unsdfsfiversities");
-                        System.out.println(organization.getName());
+                System.out.println(universities + "universities");
+                Organization organization = parseOrganization(u);
+
+                if (organization.getName() != null) {
+                    System.out.println("unsdfsfiversities");
+                    System.out.println(organization.getName());
                     creativeWork.getPublishers().add(organization);
-                } 
+                }
 
             }
         }
@@ -147,41 +147,77 @@ public class CourseraParser extends Parser {
             JsonArray instustors = links.get("instructors").getAsJsonArray();
             for (JsonElement jsonElement3 : instustors) {
                 int i = jsonElement3.getAsJsonPrimitive().getAsInt();
-                    Person person = parsePerson(i);
-                    if(person.getName()!=null){
+                Person person = parsePerson(i);
+                if (person.getName() != null) {
                     creativeWork.getAuthors().add(person);
-                } 
+                }
 
             }
         }
         boolean objSession = links.has("sessions");
         if (objSession == true) {
+           Duration d=new Duration();
+          d.setDescription("");
             JsonArray sessions = links.get("sessions").getAsJsonArray();
+            int position = 0;
+         boolean ima=false;
             for (JsonElement jsonElement1 : sessions) {
                 int s = jsonElement1.getAsJsonPrimitive().getAsInt();
                 CreativeWork child = parseSession(s);
-                if(child!=null){
-                creativeWork.getChildren().add(child);
-                child.setParent(creativeWork);
+
+                if (child != null) {
+                    creativeWork.getChildren().add(child);
+                    child.setPosition(position);
+                    System.out.println(position+"pozicija");
+                    d.setDescription( d.getDescription() + child.getDuration().getDescription());
+                   ima=true;
+
+                    position++;
+                    child.setParent(creativeWork);
                 }
+            }
+          
+            
+           
+            String split = "";
+            if(true && !d.getDescription().isEmpty()){
+                  d.setUri(URIGenerator.generate(d));
+             creativeWork.setDuration(d);
+           System.out.println(creativeWork.getDuration().getDescription() + "duration kod coursere");
+            if (creativeWork.getDuration().getDescription().contains("D")) {
+                split = "D";
+            }
+            if (creativeWork.getDuration().getDescription().contains("W")) {
+                split = "W";
+            }
+            if (creativeWork.getDuration().getDescription().contains("M")) {
+                split = "D";
+            }
+            int trajanje = 0;
+            String[] nizDuration = creativeWork.getDuration().getDescription().split(split);
+            for (int i = 0; i < nizDuration.length; i++) {
+                int br = Integer.parseInt(nizDuration[i]);
+                trajanje = trajanje + br;
+            }
+           creativeWork.getDuration().setDescription(trajanje + split);
+            trajanje = 0;
+             position = 0;
             }
         }
 
-        
         boolean objLink = jsonElement.getAsJsonObject().has("previewLink");
-        System.out.println(objLink+"link");
         if (objLink == true) {
             String link = jsonElement.getAsJsonObject().get("previewLink").getAsString();
             if (link != null) {
-                System.out.println("usao");
-             //   URI uriLink=new URI(link);
+               
                 creativeWork.setLicense(new URI(link));
-            } 
+            }
         }
-        Organization o=new Organization();
+        Organization o = new Organization();
         o.setName("Coursera");
-        o.setUri(new URI("https://www.udacity.org/"));
+        o.setUri(new URI("https://www.coursera.org"));
         creativeWork.setProvider(o);
+       
         creativeWork.setUri(URIGenerator.generate(creativeWork));
         return creativeWork;
     }
@@ -193,37 +229,35 @@ public class CourseraParser extends Parser {
         String url = MessageFormat.format(SESSIONS, c);
         JsonArray searchResults = ParserUtil.vratiPodatke(url, "elements");
         for (JsonElement jsonElement : searchResults) {
-if (!searchResults.isJsonNull()) {
-            String d = jsonElement.getAsJsonObject().get("durationString").getAsString();
-            String trajanje="/";
-            if(!d.equals("")){
-            String[] niz = d.split(" ");
-            trajanje = niz[0] + Character.toUpperCase(niz[1].charAt(0));
-            }
-            Duration duration = new Duration();
-            duration.setDescription(trajanje);
-            duration.setUri(URIGenerator.generate(duration));
+            if (!searchResults.isJsonNull()) {
+                String d = jsonElement.getAsJsonObject().get("durationString").getAsString();
+                String trajanje = "";
+                if (!d.equals("")) {
+                    String[] niz = d.split(" ");
+                    trajanje = niz[0] + Character.toUpperCase(niz[1].charAt(0));
+                }
+                Duration duration = new Duration();
+                duration.setDescription(trajanje);
+                duration.setUri(URIGenerator.generate(duration));
 
-            boolean obj = jsonElement.getAsJsonObject().has("startDay");
-            if (obj == true) {
-                int startDay = jsonElement.getAsJsonObject().get("startDay").getAsInt();
-                System.out.println(startDay + "dan");
-                int startMonth = jsonElement.getAsJsonObject().get("startMonth").getAsInt();
-                int startYear = jsonElement.getAsJsonObject().get("startYear").getAsInt();
-                String date = startYear + "-" + startMonth + "-" + startDay;
-                Date dateModified = new SimpleDateFormat("yyyy-MM-dd").parse(date);
-                child.setDateCreated(dateModified);
-            }
-            
-           
+                boolean obj = jsonElement.getAsJsonObject().has("startDay");
+                if (obj == true) {
+                    int startDay = jsonElement.getAsJsonObject().get("startDay").getAsInt();
+                    
+                    int startMonth = jsonElement.getAsJsonObject().get("startMonth").getAsInt();
+                    int startYear = jsonElement.getAsJsonObject().get("startYear").getAsInt();
+                    String date = startYear + "-" + startMonth + "-" + startDay;
+                    Date dateModified = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+                    child.setDateCreated(dateModified);
+                }
 
-            child.setDuration(duration);
-          
-            child.setUri(URIGenerator.generate(child));
+                child.setDuration(duration);
+
+                child.setUri(URIGenerator.generate(child));
+            }
+
+            return child;
         }
-
-        return child;
-        } 
         return null;
     }
 
@@ -231,24 +265,24 @@ if (!searchResults.isJsonNull()) {
         Person person = new Person();
         String link = INSTRUCTORS;
         String c = Integer.toString(instustors);
-        System.out.println(instustors + "brojevi");
+        
         Map map = new HashMap();
         map.put("{0}", instustors);
         String url = MessageFormat.format(INSTRUCTORS, c);
         JsonArray searchResults = ParserUtil.vratiPodatke(url, "elements");
-          if (!searchResults.isJsonNull()) {
-        for (JsonElement jsonElement : searchResults) {
-            String firstName = jsonElement.getAsJsonObject().get("firstName").getAsString();
-            String lastName = jsonElement.getAsJsonObject().get("lastName").getAsString();
-            String name = firstName + " " + lastName;
-            person.setName(name);
-            person.setUri(URIGenerator.generate(person));
-            System.out.println(name + " ime osobe");
+        if (!searchResults.isJsonNull()) {
+            for (JsonElement jsonElement : searchResults) {
+                String firstName = jsonElement.getAsJsonObject().get("firstName").getAsString();
+                String lastName = jsonElement.getAsJsonObject().get("lastName").getAsString();
+                String name = firstName + " " + lastName;
+                person.setName(name);
+                person.setUri(URIGenerator.generate(person));
+               
+            }
+            return person;
         }
-        return person;
-          }
-          return null;
-          
+        return null;
+
     }
 
     private static Organization parseOrganization(int universities) throws IOException, URISyntaxException {
@@ -256,18 +290,18 @@ if (!searchResults.isJsonNull()) {
         String link = UNIVERSITIES;
         String c = Integer.toString(universities);
         String url = MessageFormat.format(UNIVERSITIES, c);
-        System.out.println(url);
+        
         JsonArray searchResults = ParserUtil.vratiPodatke(url, "elements");
-        System.out.println(searchResults.toString());
-       if (!searchResults.isJsonNull()) {
-        for (JsonElement jsonElement : searchResults) {
-            String name = jsonElement.getAsJsonObject().get("name").getAsString();
-            organization.setName(name);
-            organization.setUri(URIGenerator.generate(organization));
-            System.out.println(name + " ime organizacijee");
+        
+        if (!searchResults.isJsonNull()) {
+            for (JsonElement jsonElement : searchResults) {
+                String name = jsonElement.getAsJsonObject().get("name").getAsString();
+                organization.setName(name);
+                organization.setUri(URIGenerator.generate(organization));
+                
+            }
+            return organization;
         }
-         return organization;
-       }
-       return null;
+        return null;
     }
 }

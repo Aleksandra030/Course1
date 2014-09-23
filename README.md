@@ -159,7 +159,8 @@ Pretraživanje kurseva se vrši prema četiri kriterijuma. Na sledećoj slici je
 TypicalAgeRange, Duration i Language prestavljaju padajuće liste, koje u sebi sadrže sve moguće vrednosti datog kriterijuma. Pri učitavanju strane od REST servisa traže se vrednosti iz RDF repozitorijuma. Početna i podrazumevana vrednost sve tri liste je any, koja označava da se ne vrši filtriranje po datom kriterijumu.
 
 Nakon pretrage korisniku se prikazuju kursevi u formi koja je prikazana na slici.
-![ut2](https://cloud.githubusercontent.com/assets/6192416/4350940/2f1f00f4-41fe-11e4-9b3e-b1d0b1d9e1f9.png)
+![untitled](https://cloud.githubusercontent.com/assets/6192416/4374066/65b3d728-4331-11e4-9253-a8fb30e994b8.png)
+
 
 Na početku se nalaze osnovni podaci o kursu, o kom sajtu je reč, sam naziv,jezik kursa i strana kursa. Nakon opisa samog kursa nalazi se i njegovo trajanje, organizator (publisher), sami predavaci (authors) i podaci o sesijama ukoliko ih sam kurs poseduje.
 

@@ -137,7 +137,7 @@ public class CourseraParser extends Parser {
                 if (organization.getName() != null) {
                     System.out.println("unsdfsfiversities");
                     System.out.println(organization.getName());
-                    creativeWork.getPublishers().add(organization);
+                    creativeWork.getPublisher().add(organization);
                 }
 
             }
@@ -149,7 +149,7 @@ public class CourseraParser extends Parser {
                 int i = jsonElement3.getAsJsonPrimitive().getAsInt();
                 Person person = parsePerson(i);
                 if (person.getName() != null) {
-                    creativeWork.getAuthors().add(person);
+                    creativeWork.getAuthor().add(person);
                 }
 
             }

@@ -84,7 +84,7 @@ public class UdacityParser extends Parser{
             String imeOsobe = jsonElement1.getAsJsonObject().get("name").getAsString();
             person.setName(imeOsobe);
             person.setUri(URIGenerator.generate(person));
-            creativeWork.getAuthors().add(person);
+            creativeWork.getAuthor().add(person);
         }
 
         JsonArray affiliates = jsonElement.getAsJsonObject().get("affiliates").getAsJsonArray();
@@ -94,7 +94,7 @@ public class UdacityParser extends Parser{
             String imeOsobe = jsonElement2.getAsJsonObject().get("name").getAsString();
             organization.setName(imeOsobe);
             organization.setUri(URIGenerator.generate(organization));
-            creativeWork.getPublishers().add(organization);
+            creativeWork.getPublisher().add(organization);
         }
         
          boolean objLink = jsonElement.getAsJsonObject().has("homepage");

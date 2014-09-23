@@ -30,7 +30,7 @@ import rs.fon.is.lrmi.services.QueryService;
 public class Main {
 
     public static void main(String[] args) {
-   //try {
+  try {
         // BasicConfigurator.configure();
         //  COUSERA
 //          Parser parser=new CourseraParser();
@@ -40,11 +40,11 @@ public class Main {
 //   
            
          
-     ServiceResource ks = new ServiceResource();
-    String ss=ks.getDuration();
-     //   for (String string : ss) {
-            System.out.println(ss);
-     //   }
+//     ServiceResource ks = new ServiceResource();
+//    String ss=ks.getDuration();
+//     //   for (String string : ss) {
+//            System.out.println(ss);
+//     //   }
      
 //////            String col = ks.getCoursesCousera("", "", "", "beginner","");
 //////            System.out.println(col);
@@ -61,10 +61,10 @@ public class Main {
 
 //            UDACITY 
       
-     //      Parser parser2=new UdacityParser();
-//           List <CreativeWork > list2 = parser2.parse();
-//        RDFModel.getInstance().write("listaKurseva.rdf", "TURTLE");
-//            TDB.sync(RDFModel.getInstance().getDataset());
+           Parser parser2=new UdacityParser();
+           List <CreativeWork > list2 = parser2.parse();
+        RDFModel.getInstance().write("listaKurseva.rdf", "TURTLE");
+            TDB.sync(RDFModel.getInstance().getDataset());
 //                    RDFModel.getInstance().write("dr.rdf", "TURTLE");
 //            TDB.sync(RDFModel.getInstance().getDataset());
 //            ServiceResource ks = new ServiceResource();
@@ -72,12 +72,12 @@ public class Main {
 //            System.out.println(col);
             //oba
        
-//        } catch (IOException e) {			
-//            e.printStackTrace();
-//        } catch (URISyntaxException e) {
-//            e.printStackTrace();
-//        } catch (Exception e) {
-//           e.printStackTrace();
-//        }
+        } catch (IOException e) {			
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+           e.printStackTrace();
+        }
     }
 }

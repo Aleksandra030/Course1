@@ -39,7 +39,7 @@ public class JSONParser {
         jsonCreateWork.addProperty("name", p.getName());
 
         JsonArray namePerson = new JsonArray();
-        for (Person person : p.getAuthors()) {
+        for (Person person : p.getAuthor()) {
 
             namePerson.add(serializeAuthor(person));
 
@@ -47,7 +47,7 @@ public class JSONParser {
         jsonCreateWork.add("authors", namePerson);
 
         JsonArray nameOrganization = new JsonArray();
-        for (Organization organization : p.getPublishers()) {
+        for (Organization organization : p.getPublisher()) {
 
             nameOrganization.add(serializePublisher(organization));
 

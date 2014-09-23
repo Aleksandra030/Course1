@@ -26,10 +26,10 @@ import java.net.URI;
 @RdfType("CreativeWork")
 public class CreativeWork extends Thing {
 
-    @RdfProperty(Constants.SCHEMA + "authors")
-    Collection<Person> authors;
-    @RdfProperty(Constants.SCHEMA + "publishers")
-    private Collection<Organization> publishers;
+    @RdfProperty(Constants.SCHEMA + "author")
+    Collection<Person> author;
+    @RdfProperty(Constants.SCHEMA + "publisher")
+    private Collection<Organization> publisher;
 
     // TODO
     @RdfProperty(Constants.SCHEMA + "hasPart")
@@ -112,20 +112,20 @@ public class CreativeWork extends Thing {
         this.dateCreated = dateCreated;
     }
 
-    public Collection<Person> getAuthors() {
-        return authors;
+    public Collection<Person> getAuthor() {
+        return author;
     }
 
-    public void setAuthors(Collection<Person> authors) {
-        this.authors = authors;
+    public void setAuthors(Collection<Person> author) {
+        this.author = author;
     }
 
-    public Collection<Organization> getPublishers() {
-        return publishers;
+    public Collection<Organization> getPublisher() {
+        return publisher;
     }
 
-    public void setPublishers(Collection<Organization> publishers) {
-        this.publishers = publishers;
+    public void setPublishers(Collection<Organization> publisher) {
+        this.publisher = publisher;
     }
 
     public String getInLanguage() {
@@ -146,8 +146,8 @@ public class CreativeWork extends Thing {
 
     public CreativeWork() {
         children = new ArrayList<CreativeWork>();
-        publishers = new ArrayList<Organization>();
-        authors = new ArrayList<Person>();
+        publisher = new ArrayList<Organization>();
+        author = new ArrayList<Person>();
     }
 
 }
